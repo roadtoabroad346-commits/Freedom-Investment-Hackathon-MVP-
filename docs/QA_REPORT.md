@@ -38,3 +38,7 @@
 - Remote deploy smoke отражается отдельно в DEPLOYMENT.md по фактическому результату.
 
 Версия модели fcff-drivers-v1; snapshot MX-3777d2e495a9; input SHA256 3777d2e495a9365bcd6998569215112469c5441a1edd9f20eb62512a7fcbf746. Git SHA относится к коммиту, содержащему этот отчёт и тот же код; смотреть git log. Выводы ограничены выполненными проверками и входными данными.
+
+## Подтверждение удалённого размещения
+
+Vercel deployment dpl_8tfDzq3GnF3YDZVRRyebu2GfSYx7: READY, source dfcd4475be5fd4886089c19eb5ef92caeb556099. Авторизованный remote smoke подтвердил200 для главной, company, valuation, health, screen и обоих экспортеров. FINAL запрос409. Защита входом сохранена; полностью публичный Jury URL без логина не подтверждён. Подробности в DEPLOYMENT.md и REMOTE_SMOKE.json. Это не подменяет отсутствующие market-data/Supabase проверки.

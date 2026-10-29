@@ -1,0 +1,80 @@
+{
+  "deploymentId": "dpl_8tfDzq3GnF3YDZVRRyebu2GfSYx7",
+  "url": "https://mirror-5yd8uubiq-impact-hub.vercel.app",
+  "sourceCommit": "dfcd4475be5fd4886089c19eb5ef92caeb556099",
+  "snapshotId": "MX-3777d2e495a9",
+  "authenticatedAccess": true,
+  "healthStatus": 200,
+  "screenMsftStatus": 200,
+  "finalExportStatus": 409,
+  "checks": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/",
+        "status": 200,
+        "success": true,
+        "contentType": "text/html; charset=utf-8",
+        "bodyLength": 43158,
+        "hasMirror": true
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/company/ADBE",
+        "status": 200,
+        "success": true,
+        "contentType": "text/html; charset=utf-8",
+        "bodyLength": 41698,
+        "hasMirror": true
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/valuation/ADBE",
+        "status": 200,
+        "success": true,
+        "contentType": "text/html; charset=utf-8",
+        "bodyLength": 25289,
+        "hasMirror": true
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/downloads/manifest.json",
+        "status": 200,
+        "success": true,
+        "contentType": "application/json; charset=utf-8",
+        "bodyLength": 385,
+        "hasMirror": true
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/api/export/xlsx",
+        "status": 200,
+        "success": true,
+        "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "snapshotId": "MX-3777d2e495a9",
+        "bodyLength": 82335,
+        "hasMirror": false
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/api/export/pptx",
+        "status": 200,
+        "success": true,
+        "contentType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+        "snapshotId": "MX-3777d2e495a9",
+        "bodyLength": 231744,
+        "hasMirror": true
+      }
+    }
+  ]
+}
