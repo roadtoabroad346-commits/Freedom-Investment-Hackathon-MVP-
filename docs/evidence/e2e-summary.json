@@ -1,0 +1,16 @@
+{
+  "stats": {
+    "startTime": "2026-10-29T07:40:22.695Z",
+    "duration": 25907.699,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "snapshotId": "MX-3777d2e495a9",
+  "viewports": [
+    390,
+    1366
+  ],
+  "browser": "Chromium /usr/bin/chromium"
+}

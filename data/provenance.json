@@ -1,0 +1,10 @@
+{
+  "importedAt": "2026-10-29",
+  "provider": "Open Knowledge Foundation / datasets; upstream Yahoo Finance",
+  "sourceUrl": "https://github.com/datasets/s-and-p-500-companies-financials",
+  "license": "ODC-PDDL-1.0 (dataset publisher declaration; upstream redistribution rights require review before commercial launch)",
+  "sha256": "00453cfd3e9499afd49a9ac7ecfd247dfdb24f1f3cca870ce8f2fbc70c307ecc",
+  "rows": 503,
+  "priceAsOf": null,
+  "limitation": "Источник не содержит даты котировок: UNDATED. Это импортированный справочник и исследовательский набор, не текущие рыночные цены."
+}

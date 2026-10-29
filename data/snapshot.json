@@ -1,0 +1,136 @@
+{
+  "id": "MX-3777d2e495a9",
+  "generatedAt": "2026-10-29T07:16:39.360Z",
+  "cutoff": "2026-10-29",
+  "modelVersion": "fcff-drivers-v1",
+  "scoreVersion": "sector-value-v1",
+  "sourceHash": "3777d2e495a9365bcd6998569215112469c5441a1edd9f20eb62512a7fcbf746",
+  "status": "PRELIMINARY",
+  "companies": [
+    {
+      "ticker": "ADBE",
+      "name": "Adobe Inc.",
+      "price": null,
+      "priceAsOf": null,
+      "fairValue": 257.2023533830612,
+      "target12m": 266.2720559344821,
+      "upside": null,
+      "allocationBps": 4000,
+      "recommendation": "NOT-RATED",
+      "reviewed": false,
+      "gates": [
+        {
+          "name": "Биржа и инструмент",
+          "status": "REVIEW",
+          "reason": "Биржа и тип требуют проверки"
+        },
+        {
+          "name": "Цена и капитализация на 02.11",
+          "status": "REVIEW",
+          "reason": "Нет regular close и капитализации на конкурсную дату"
+        },
+        {
+          "name": "Оборот USD, средний за 3 месяца",
+          "status": "REVIEW",
+          "reason": "Нет подтверждённых данных"
+        },
+        {
+          "name": "История торгов, лет",
+          "status": "REVIEW",
+          "reason": "Нет подтверждённых данных"
+        },
+        {
+          "name": "Запрещённые отрасли",
+          "status": "REVIEW",
+          "reason": "Проверить преобладающую долю выручки по сегментам"
+        }
+      ]
+    },
+    {
+      "ticker": "PYPL",
+      "name": "PayPal",
+      "price": null,
+      "priceAsOf": null,
+      "fairValue": 66.02825475069521,
+      "target12m": 67.69534078050994,
+      "upside": null,
+      "allocationBps": 3500,
+      "recommendation": "NOT-RATED",
+      "reviewed": false,
+      "gates": [
+        {
+          "name": "Биржа и инструмент",
+          "status": "REVIEW",
+          "reason": "Биржа и тип требуют проверки"
+        },
+        {
+          "name": "Цена и капитализация на 02.11",
+          "status": "REVIEW",
+          "reason": "Нет regular close и капитализации на конкурсную дату"
+        },
+        {
+          "name": "Оборот USD, средний за 3 месяца",
+          "status": "REVIEW",
+          "reason": "Нет подтверждённых данных"
+        },
+        {
+          "name": "История торгов, лет",
+          "status": "REVIEW",
+          "reason": "Нет подтверждённых данных"
+        },
+        {
+          "name": "Запрещённые отрасли",
+          "status": "REVIEW",
+          "reason": "Проверить преобладающую долю выручки по сегментам"
+        }
+      ]
+    },
+    {
+      "ticker": "NKE",
+      "name": "Nike, Inc.",
+      "price": null,
+      "priceAsOf": null,
+      "fairValue": 29.500029492249407,
+      "target12m": 30.21664817408745,
+      "upside": null,
+      "allocationBps": 2500,
+      "recommendation": "NOT-RATED",
+      "reviewed": false,
+      "gates": [
+        {
+          "name": "Биржа и инструмент",
+          "status": "REVIEW",
+          "reason": "Биржа и тип требуют проверки"
+        },
+        {
+          "name": "Цена и капитализация на 02.11",
+          "status": "REVIEW",
+          "reason": "Нет regular close и капитализации на конкурсную дату"
+        },
+        {
+          "name": "Оборот USD, средний за 3 месяца",
+          "status": "REVIEW",
+          "reason": "Нет подтверждённых данных"
+        },
+        {
+          "name": "История торгов, лет",
+          "status": "REVIEW",
+          "reason": "Нет подтверждённых данных"
+        },
+        {
+          "name": "Запрещённые отрасли",
+          "status": "REVIEW",
+          "reason": "Проверить преобладающую долю выручки по сегментам"
+        }
+      ]
+    }
+  ],
+  "blockers": [
+    "До закрытия 02.11.2026 конкурсные цены ещё недоступны.",
+    "Не подтверждены 3-месячная ликвидность, история торгов и доли выручки запрещённых направлений.",
+    "Три основных кандидата выбраны для исследования; нет трёх аналитически подтверждённых Buy.",
+    "Годовые финансовые модели требуют сверки с последними кварталами и нормализации; PayPal BNPL требует отдельной проверки.",
+    "Не загружена актуальная история OHLCV: технический анализ и вход/выход не финализированы.",
+    "Общий набор: котировки без даты; провайдер Open Knowledge Foundation / datasets; upstream Yahoo Finance."
+  ]
+}

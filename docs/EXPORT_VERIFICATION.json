@@ -1,0 +1,1161 @@
+{
+  "snapshotId": "MX-3777d2e495a9",
+  "independentEngine": "formulas Python package",
+  "numericFormulaCellsMatched": 230,
+  "formulaErrors": [],
+  "presentationSlides": 14,
+  "pptxXlsxSnapshotReconciliation": "PASS",
+  "status": "PRELIMINARY",
+  "checks": [
+    {
+      "cell": "DCF_ADBE!B17",
+      "independent": 25432.83,
+      "cached": 25432.83
+    },
+    {
+      "cell": "DCF_ADBE!C17",
+      "independent": 27213.1281,
+      "cached": 27213.1281
+    },
+    {
+      "cell": "DCF_ADBE!D17",
+      "independent": 29118.047067000003,
+      "cached": 29118.047067000003
+    },
+    {
+      "cell": "DCF_ADBE!E17",
+      "independent": 31156.310361690004,
+      "cached": 31156.310361690004
+    },
+    {
+      "cell": "DCF_ADBE!F17",
+      "independent": 33337.25208700831,
+      "cached": 33337.25208700831
+    },
+    {
+      "cell": "DCF_ADBE!B18",
+      "independent": 8901.4905,
+      "cached": 8901.4905
+    },
+    {
+      "cell": "DCF_ADBE!C18",
+      "independent": 9524.594835,
+      "cached": 9524.594835
+    },
+    {
+      "cell": "DCF_ADBE!D18",
+      "independent": 10191.31647345,
+      "cached": 10191.31647345
+    },
+    {
+      "cell": "DCF_ADBE!E18",
+      "independent": 10904.7086265915,
+      "cached": 10904.7086265915
+    },
+    {
+      "cell": "DCF_ADBE!F18",
+      "independent": 11668.038230452908,
+      "cached": 11668.038230452908
+    },
+    {
+      "cell": "DCF_ADBE!B19",
+      "independent": 7121.1924,
+      "cached": 7121.1924
+    },
+    {
+      "cell": "DCF_ADBE!C19",
+      "independent": 7619.675868,
+      "cached": 7619.675868
+    },
+    {
+      "cell": "DCF_ADBE!D19",
+      "independent": 8153.053178760001,
+      "cached": 8153.053178760001
+    },
+    {
+      "cell": "DCF_ADBE!E19",
+      "independent": 8723.7669012732,
+      "cached": 8723.7669012732
+    },
+    {
+      "cell": "DCF_ADBE!F19",
+      "independent": 9334.430584362328,
+      "cached": 9334.430584362328
+    },
+    {
+      "cell": "DCF_ADBE!B20",
+      "independent": 508.6566,
+      "cached": 508.6566
+    },
+    {
+      "cell": "DCF_ADBE!C20",
+      "independent": 544.262562,
+      "cached": 544.262562
+    },
+    {
+      "cell": "DCF_ADBE!D20",
+      "independent": 582.3609413400001,
+      "cached": 582.3609413400001
+    },
+    {
+      "cell": "DCF_ADBE!E20",
+      "independent": 623.1262072338001,
+      "cached": 623.1262072338001
+    },
+    {
+      "cell": "DCF_ADBE!F20",
+      "independent": 666.7450417401662,
+      "cached": 666.7450417401662
+    },
+    {
+      "cell": "DCF_ADBE!B21",
+      "independent": 508.6566,
+      "cached": 508.6566
+    },
+    {
+      "cell": "DCF_ADBE!C21",
+      "independent": 544.262562,
+      "cached": 544.262562
+    },
+    {
+      "cell": "DCF_ADBE!D21",
+      "independent": 582.3609413400001,
+      "cached": 582.3609413400001
+    },
+    {
+      "cell": "DCF_ADBE!E21",
+      "independent": 623.1262072338001,
+      "cached": 623.1262072338001
+    },
+    {
+      "cell": "DCF_ADBE!F21",
+      "independent": 666.7450417401662,
+      "cached": 666.7450417401662
+    },
+    {
+      "cell": "DCF_ADBE!B22",
+      "independent": 49.91490000000005,
+      "cached": 49.91490000000005
+    },
+    {
+      "cell": "DCF_ADBE!C22",
+      "independent": 53.408943,
+      "cached": 53.408943
+    },
+    {
+      "cell": "DCF_ADBE!D22",
+      "independent": 57.14756901000004,
+      "cached": 57.14756901000004
+    },
+    {
+      "cell": "DCF_ADBE!E22",
+      "independent": 61.14789884070004,
+      "cached": 61.14789884070004
+    },
+    {
+      "cell": "DCF_ADBE!F22",
+      "independent": 65.42825175954917,
+      "cached": 65.42825175954917
+    },
+    {
+      "cell": "DCF_ADBE!B23",
+      "independent": 7071.2775,
+      "cached": 7071.2775
+    },
+    {
+      "cell": "DCF_ADBE!C23",
+      "independent": 7566.266925,
+      "cached": 7566.266925
+    },
+    {
+      "cell": "DCF_ADBE!D23",
+      "independent": 8095.905609750002,
+      "cached": 8095.905609750002
+    },
+    {
+      "cell": "DCF_ADBE!E23",
+      "independent": 8662.6190024325,
+      "cached": 8662.6190024325
+    },
+    {
+      "cell": "DCF_ADBE!F23",
+      "independent": 9269.002332602779,
+      "cached": 9269.002332602779
+    },
+    {
+      "cell": "DCF_ADBE!B24",
+      "independent": 6428.434090909091,
+      "cached": 6428.434090909091
+    },
+    {
+      "cell": "DCF_ADBE!C24",
+      "independent": 6253.113161157024,
+      "cached": 6253.113161157024
+    },
+    {
+      "cell": "DCF_ADBE!D24",
+      "independent": 6082.573711307287,
+      "cached": 6082.573711307287
+    },
+    {
+      "cell": "DCF_ADBE!E24",
+      "independent": 5916.685337362543,
+      "cached": 5916.685337362543
+    },
+    {
+      "cell": "DCF_ADBE!F24",
+      "independent": 5755.321191798111,
+      "cached": 5755.321191798111
+    },
+    {
+      "cell": "DCF_ADBE!B27",
+      "independent": 9542.788409906127,
+      "cached": 9542.788409906127
+    },
+    {
+      "cell": "DCF_ADBE!B28",
+      "independent": 127237.17879874834,
+      "cached": 127237.17879874834
+    },
+    {
+      "cell": "DCF_ADBE!B29",
+      "independent": 79004.27740203308,
+      "cached": 79004.27740203308
+    },
+    {
+      "cell": "DCF_ADBE!B30",
+      "independent": 109440.40489456714,
+      "cached": 109440.40489456714
+    },
+    {
+      "cell": "DCF_ADBE!B31",
+      "independent": 109825.40489456714,
+      "cached": 109825.40489456714
+    },
+    {
+      "cell": "DCF_ADBE!B32",
+      "independent": 257.2023533830612,
+      "cached": 257.2023533830612
+    },
+    {
+      "cell": "DCF_ADBE!B33",
+      "independent": 266.2720559344821,
+      "cached": 266.2720559344821
+    },
+    {
+      "cell": "DCF_ADBE!B34",
+      "independent": 0.7218931388105183,
+      "cached": 0.7218931388105183
+    },
+    {
+      "cell": "DCF_PYPL!B17",
+      "independent": 34498.880000000005,
+      "cached": 34498.880000000005
+    },
+    {
+      "cell": "DCF_PYPL!C17",
+      "independent": 35878.83520000001,
+      "cached": 35878.83520000001
+    },
+    {
+      "cell": "DCF_PYPL!D17",
+      "independent": 37313.98860800001,
+      "cached": 37313.98860800001
+    },
+    {
+      "cell": "DCF_PYPL!E17",
+      "independent": 38806.54815232001,
+      "cached": 38806.54815232001
+    },
+    {
+      "cell": "DCF_PYPL!F17",
+      "independent": 40358.81007841281,
+      "cached": 40358.81007841281
+    },
+    {
+      "cell": "DCF_PYPL!B18",
+      "independent": 6209.798400000001,
+      "cached": 6209.798400000001
+    },
+    {
+      "cell": "DCF_PYPL!C18",
+      "independent": 6458.1903360000015,
+      "cached": 6458.1903360000015
+    },
+    {
+      "cell": "DCF_PYPL!D18",
+      "independent": 6716.517949440001,
+      "cached": 6716.517949440001
+    },
+    {
+      "cell": "DCF_PYPL!E18",
+      "independent": 6985.178667417601,
+      "cached": 6985.178667417601
+    },
+    {
+      "cell": "DCF_PYPL!F18",
+      "independent": 7264.585814114305,
+      "cached": 7264.585814114305
+    },
+    {
+      "cell": "DCF_PYPL!B19",
+      "independent": 4905.740736000001,
+      "cached": 4905.740736000001
+    },
+    {
+      "cell": "DCF_PYPL!C19",
+      "independent": 5101.970365440002,
+      "cached": 5101.970365440002
+    },
+    {
+      "cell": "DCF_PYPL!D19",
+      "independent": 5306.049180057601,
+      "cached": 5306.049180057601
+    },
+    {
+      "cell": "DCF_PYPL!E19",
+      "independent": 5518.291147259905,
+      "cached": 5518.291147259905
+    },
+    {
+      "cell": "DCF_PYPL!F19",
+      "independent": 5739.022793150301,
+      "cached": 5739.022793150301
+    },
+    {
+      "cell": "DCF_PYPL!B20",
+      "independent": 1034.9664,
+      "cached": 1034.9664
+    },
+    {
+      "cell": "DCF_PYPL!C20",
+      "independent": 1076.3650560000003,
+      "cached": 1076.3650560000003
+    },
+    {
+      "cell": "DCF_PYPL!D20",
+      "independent": 1119.4196582400002,
+      "cached": 1119.4196582400002
+    },
+    {
+      "cell": "DCF_PYPL!E20",
+      "independent": 1164.1964445696,
+      "cached": 1164.1964445696
+    },
+    {
+      "cell": "DCF_PYPL!F20",
+      "independent": 1210.7643023523842,
+      "cached": 1210.7643023523842
+    },
+    {
+      "cell": "DCF_PYPL!B21",
+      "independent": 862.4720000000002,
+      "cached": 862.4720000000002
+    },
+    {
+      "cell": "DCF_PYPL!C21",
+      "independent": 896.9708800000003,
+      "cached": 896.9708800000003
+    },
+    {
+      "cell": "DCF_PYPL!D21",
+      "independent": 932.8497152000002,
+      "cached": 932.8497152000002
+    },
+    {
+      "cell": "DCF_PYPL!E21",
+      "independent": 970.1637038080003,
+      "cached": 970.1637038080003
+    },
+    {
+      "cell": "DCF_PYPL!F21",
+      "independent": 1008.9702519603203,
+      "cached": 1008.9702519603203
+    },
+    {
+      "cell": "DCF_PYPL!B22",
+      "independent": 26.537600000000094,
+      "cached": 26.537600000000094
+    },
+    {
+      "cell": "DCF_PYPL!C22",
+      "independent": 27.59910400000008,
+      "cached": 27.59910400000008
+    },
+    {
+      "cell": "DCF_PYPL!D22",
+      "independent": 28.703068159999965,
+      "cached": 28.703068159999965
+    },
+    {
+      "cell": "DCF_PYPL!E22",
+      "independent": 29.8511908864,
+      "cached": 29.8511908864
+    },
+    {
+      "cell": "DCF_PYPL!F22",
+      "independent": 31.04523852185608,
+      "cached": 31.04523852185608
+    },
+    {
+      "cell": "DCF_PYPL!B23",
+      "independent": 5051.6975360000015,
+      "cached": 5051.6975360000015
+    },
+    {
+      "cell": "DCF_PYPL!C23",
+      "independent": 5253.765437440002,
+      "cached": 5253.765437440002
+    },
+    {
+      "cell": "DCF_PYPL!D23",
+      "independent": 5463.916054937601,
+      "cached": 5463.916054937601
+    },
+    {
+      "cell": "DCF_PYPL!E23",
+      "independent": 5682.472697135105,
+      "cached": 5682.472697135105
+    },
+    {
+      "cell": "DCF_PYPL!F23",
+      "independent": 5909.771605020509,
+      "cached": 5909.771605020509
+    },
+    {
+      "cell": "DCF_PYPL!B24",
+      "independent": 4571.671978280545,
+      "cached": 4571.671978280545
+    },
+    {
+      "cell": "DCF_PYPL!C24",
+      "independent": 4302.7500972052185,
+      "cached": 4302.7500972052185
+    },
+    {
+      "cell": "DCF_PYPL!D24",
+      "independent": 4049.647150310793,
+      "cached": 4049.647150310793
+    },
+    {
+      "cell": "DCF_PYPL!E24",
+      "independent": 3811.432612057217,
+      "cached": 3811.432612057217
+    },
+    {
+      "cell": "DCF_PYPL!F24",
+      "independent": 3587.2306937009103,
+      "cached": 3587.2306937009103
+    },
+    {
+      "cell": "DCF_PYPL!B27",
+      "independent": 6043.489656381847,
+      "cached": 6043.489656381847
+    },
+    {
+      "cell": "DCF_PYPL!B28",
+      "independent": 71099.87831037468,
+      "cached": 71099.87831037468
+    },
+    {
+      "cell": "DCF_PYPL!B29",
+      "independent": 43157.618067118274,
+      "cached": 43157.618067118274
+    },
+    {
+      "cell": "DCF_PYPL!B30",
+      "independent": 63480.35059867296,
+      "cached": 63480.35059867296
+    },
+    {
+      "cell": "DCF_PYPL!B31",
+      "independent": 63915.35059867296,
+      "cached": 63915.35059867296
+    },
+    {
+      "cell": "DCF_PYPL!B32",
+      "independent": 66.02825475069521,
+      "cached": 66.02825475069521
+    },
+    {
+      "cell": "DCF_PYPL!B33",
+      "independent": 67.69534078050994,
+      "cached": 67.69534078050994
+    },
+    {
+      "cell": "DCF_PYPL!B34",
+      "independent": 0.6798579034316247,
+      "cached": 0.6798579034316247
+    },
+    {
+      "cell": "DCF_NKE!B17",
+      "independent": 48021.92999999999,
+      "cached": 48021.92999999999
+    },
+    {
+      "cell": "DCF_NKE!C17",
+      "independent": 49702.69754999999,
+      "cached": 49702.69754999999
+    },
+    {
+      "cell": "DCF_NKE!D17",
+      "independent": 51442.291964249984,
+      "cached": 51442.291964249984
+    },
+    {
+      "cell": "DCF_NKE!E17",
+      "independent": 53242.77218299873,
+      "cached": 53242.77218299873
+    },
+    {
+      "cell": "DCF_NKE!F17",
+      "independent": 55106.269209403676,
+      "cached": 55106.269209403676
+    },
+    {
+      "cell": "DCF_NKE!B18",
+      "independent": 4802.192999999999,
+      "cached": 4802.192999999999
+    },
+    {
+      "cell": "DCF_NKE!C18",
+      "independent": 4970.269754999999,
+      "cached": 4970.269754999999
+    },
+    {
+      "cell": "DCF_NKE!D18",
+      "independent": 5144.229196424999,
+      "cached": 5144.229196424999
+    },
+    {
+      "cell": "DCF_NKE!E18",
+      "independent": 5324.277218299873,
+      "cached": 5324.277218299873
+    },
+    {
+      "cell": "DCF_NKE!F18",
+      "independent": 5510.626920940368,
+      "cached": 5510.626920940368
+    },
+    {
+      "cell": "DCF_NKE!B19",
+      "independent": 3745.7105399999996,
+      "cached": 3745.7105399999996
+    },
+    {
+      "cell": "DCF_NKE!C19",
+      "independent": 3876.8104088999994,
+      "cached": 3876.8104088999994
+    },
+    {
+      "cell": "DCF_NKE!D19",
+      "independent": 4012.498773211499,
+      "cached": 4012.498773211499
+    },
+    {
+      "cell": "DCF_NKE!E19",
+      "independent": 4152.936230273901,
+      "cached": 4152.936230273901
+    },
+    {
+      "cell": "DCF_NKE!F19",
+      "independent": 4298.288998333487,
+      "cached": 4298.288998333487
+    },
+    {
+      "cell": "DCF_NKE!B20",
+      "independent": 816.37281,
+      "cached": 816.37281
+    },
+    {
+      "cell": "DCF_NKE!C20",
+      "independent": 844.9458583499999,
+      "cached": 844.9458583499999
+    },
+    {
+      "cell": "DCF_NKE!D20",
+      "independent": 874.5189633922498,
+      "cached": 874.5189633922498
+    },
+    {
+      "cell": "DCF_NKE!E20",
+      "independent": 905.1271271109784,
+      "cached": 905.1271271109784
+    },
+    {
+      "cell": "DCF_NKE!F20",
+      "independent": 936.8065765598626,
+      "cached": 936.8065765598626
+    },
+    {
+      "cell": "DCF_NKE!B21",
+      "independent": 1200.5482499999998,
+      "cached": 1200.5482499999998
+    },
+    {
+      "cell": "DCF_NKE!C21",
+      "independent": 1242.5674387499998,
+      "cached": 1242.5674387499998
+    },
+    {
+      "cell": "DCF_NKE!D21",
+      "independent": 1286.0572991062497,
+      "cached": 1286.0572991062497
+    },
+    {
+      "cell": "DCF_NKE!E21",
+      "independent": 1331.0693045749683,
+      "cached": 1331.0693045749683
+    },
+    {
+      "cell": "DCF_NKE!F21",
+      "independent": 1377.656730235092,
+      "cached": 1377.656730235092
+    },
+    {
+      "cell": "DCF_NKE!B22",
+      "independent": 162.39299999999932,
+      "cached": 162.39299999999932
+    },
+    {
+      "cell": "DCF_NKE!C22",
+      "independent": 168.0767549999997,
+      "cached": 168.0767549999997
+    },
+    {
+      "cell": "DCF_NKE!D22",
+      "independent": 173.9594414249994,
+      "cached": 173.9594414249994
+    },
+    {
+      "cell": "DCF_NKE!E22",
+      "independent": 180.0480218748744,
+      "cached": 180.0480218748744
+    },
+    {
+      "cell": "DCF_NKE!F22",
+      "independent": 186.3497026404948,
+      "cached": 186.3497026404948
+    },
+    {
+      "cell": "DCF_NKE!B23",
+      "independent": 3199.142100000001,
+      "cached": 3199.142100000001
+    },
+    {
+      "cell": "DCF_NKE!C23",
+      "independent": 3311.1120734999995,
+      "cached": 3311.1120734999995
+    },
+    {
+      "cell": "DCF_NKE!D23",
+      "independent": 3427.000996072499,
+      "cached": 3427.000996072499
+    },
+    {
+      "cell": "DCF_NKE!E23",
+      "independent": 3546.946030935036,
+      "cached": 3546.946030935036
+    },
+    {
+      "cell": "DCF_NKE!F23",
+      "independent": 3671.089142017763,
+      "cached": 3671.089142017763
+    },
+    {
+      "cell": "DCF_NKE!B24",
+      "independent": 2908.3110000000006,
+      "cached": 2908.3110000000006
+    },
+    {
+      "cell": "DCF_NKE!C24",
+      "independent": 2736.456259090908,
+      "cached": 2736.456259090908
+    },
+    {
+      "cell": "DCF_NKE!D24",
+      "independent": 2574.756571053718,
+      "cached": 2574.756571053718
+    },
+    {
+      "cell": "DCF_NKE!E24",
+      "independent": 2422.6118645823612,
+      "cached": 2422.6118645823612
+    },
+    {
+      "cell": "DCF_NKE!F24",
+      "independent": 2279.4575271297676,
+      "cached": 2279.4575271297676
+    },
+    {
+      "cell": "DCF_NKE!B27",
+      "independent": 3824.3750831326156,
+      "cached": 3824.3750831326156
+    },
+    {
+      "cell": "DCF_NKE!B28",
+      "independent": 47804.688539157694,
+      "cached": 47804.688539157694
+    },
+    {
+      "cell": "DCF_NKE!B29",
+      "independent": 29682.950456164617,
+      "cached": 29682.950456164617
+    },
+    {
+      "cell": "DCF_NKE!B30",
+      "independent": 42604.54367802137,
+      "cached": 42604.54367802137
+    },
+    {
+      "cell": "DCF_NKE!B31",
+      "independent": 43689.54367802137,
+      "cached": 43689.54367802137
+    },
+    {
+      "cell": "DCF_NKE!B32",
+      "independent": 29.500029492249407,
+      "cached": 29.500029492249407
+    },
+    {
+      "cell": "DCF_NKE!B33",
+      "independent": 30.21664817408745,
+      "cached": 30.21664817408745
+    },
+    {
+      "cell": "DCF_NKE!B34",
+      "independent": 0.6967085642435202,
+      "cached": 0.6967085642435202
+    },
+    {
+      "cell": "SENSITIVITY!C3",
+      "independent": 266.10433013337973,
+      "cached": 266.10433013337973
+    },
+    {
+      "cell": "SENSITIVITY!D3",
+      "independent": 280.72292109010266,
+      "cached": 280.72292109010266
+    },
+    {
+      "cell": "SENSITIVITY!E3",
+      "independent": 297.5905260401676,
+      "cached": 297.5905260401676
+    },
+    {
+      "cell": "SENSITIVITY!F3",
+      "independent": 317.26939848191006,
+      "cached": 317.26939848191006
+    },
+    {
+      "cell": "SENSITIVITY!G3",
+      "independent": 340.52624773124205,
+      "cached": 340.52624773124205
+    },
+    {
+      "cell": "SENSITIVITY!C4",
+      "independent": 249.04942273483164,
+      "cached": 249.04942273483164
+    },
+    {
+      "cell": "SENSITIVITY!D4",
+      "independent": 261.60296730173434,
+      "cached": 261.60296730173434
+    },
+    {
+      "cell": "SENSITIVITY!E4",
+      "independent": 275.94987537819463,
+      "cached": 275.94987537819463
+    },
+    {
+      "cell": "SENSITIVITY!F4",
+      "independent": 292.5040000818028,
+      "cached": 292.5040000818028
+    },
+    {
+      "cell": "SENSITIVITY!G4",
+      "independent": 311.8171455693455,
+      "cached": 311.8171455693455
+    },
+    {
+      "cell": "SENSITIVITY!C5",
+      "independent": 234.0092882032049,
+      "cached": 234.0092882032049
+    },
+    {
+      "cell": "SENSITIVITY!D5",
+      "independent": 244.88103750626254,
+      "cached": 244.88103750626254
+    },
+    {
+      "cell": "SENSITIVITY!E5",
+      "independent": 257.2023533830612,
+      "cached": 257.2023533830612
+    },
+    {
+      "cell": "SENSITIVITY!F5",
+      "independent": 271.2838572422597,
+      "cached": 271.2838572422597
+    },
+    {
+      "cell": "SENSITIVITY!G5",
+      "independent": 287.53174631056567,
+      "cached": 287.53174631056567
+    },
+    {
+      "cell": "SENSITIVITY!C6",
+      "independent": 220.6479420316022,
+      "cached": 220.6479420316022
+    },
+    {
+      "cell": "SENSITIVITY!D6",
+      "independent": 230.13376904593602,
+      "cached": 230.13376904593602
+    },
+    {
+      "cell": "SENSITIVITY!E6",
+      "independent": 240.80532443706156,
+      "cached": 240.80532443706156
+    },
+    {
+      "cell": "SENSITIVITY!F6",
+      "independent": 252.8997538803372,
+      "cached": 252.8997538803372
+    },
+    {
+      "cell": "SENSITIVITY!G6",
+      "independent": 266.7219589583665,
+      "cached": 266.7219589583665
+    },
+    {
+      "cell": "SENSITIVITY!C7",
+      "independent": 208.7001385266476,
+      "cached": 208.7001385266476
+    },
+    {
+      "cell": "SENSITIVITY!D7",
+      "independent": 217.03188487529766,
+      "cached": 217.03188487529766
+    },
+    {
+      "cell": "SENSITIVITY!E7",
+      "independent": 226.34383667673015,
+      "cached": 226.34383667673015
+    },
+    {
+      "cell": "SENSITIVITY!F7",
+      "independent": 236.81978245334165,
+      "cached": 236.81978245334165
+    },
+    {
+      "cell": "SENSITIVITY!G7",
+      "independent": 248.69252100016809,
+      "cached": 248.69252100016809
+    },
+    {
+      "cell": "SENSITIVITY!C8",
+      "independent": 68.26376498519483,
+      "cached": 68.26376498519483
+    },
+    {
+      "cell": "SENSITIVITY!D8",
+      "independent": 71.36564964469082,
+      "cached": 71.36564964469083
+    },
+    {
+      "cell": "SENSITIVITY!E8",
+      "independent": 74.88111892545298,
+      "cached": 74.881118925453
+    },
+    {
+      "cell": "SENSITIVITY!F8",
+      "independent": 78.89879810346686,
+      "cached": 78.89879810346687
+    },
+    {
+      "cell": "SENSITIVITY!G8",
+      "independent": 83.53458177040598,
+      "cached": 83.53458177040599
+    },
+    {
+      "cell": "SENSITIVITY!C9",
+      "independent": 64.4275370724465,
+      "cached": 64.4275370724465
+    },
+    {
+      "cell": "SENSITIVITY!D9",
+      "independent": 67.13343194935523,
+      "cached": 67.13343194935526
+    },
+    {
+      "cell": "SENSITIVITY!E9",
+      "independent": 70.17756368587757,
+      "cached": 70.17756368587757
+    },
+    {
+      "cell": "SENSITIVITY!F9",
+      "independent": 73.62757965393622,
+      "cached": 73.62757965393622
+    },
+    {
+      "cell": "SENSITIVITY!G9",
+      "independent": 77.57045504600323,
+      "cached": 77.57045504600325
+    },
+    {
+      "cell": "SENSITIVITY!C10",
+      "independent": 60.99631288963463,
+      "cached": 60.99631288963463
+    },
+    {
+      "cell": "SENSITIVITY!D10",
+      "independent": 63.37250765735766,
+      "cached": 63.37250765735768
+    },
+    {
+      "cell": "SENSITIVITY!E10",
+      "independent": 66.02825475069518,
+      "cached": 66.02825475069521
+    },
+    {
+      "cell": "SENSITIVITY!F10",
+      "independent": 69.0159702306999,
+      "cached": 69.01597023069992
+    },
+    {
+      "cell": "SENSITIVITY!G10",
+      "independent": 72.40204777470525,
+      "cached": 72.40204777470527
+    },
+    {
+      "cell": "SENSITIVITY!C11",
+      "independent": 57.90931477363083,
+      "cached": 57.90931477363083
+    },
+    {
+      "cell": "SENSITIVITY!D11",
+      "independent": 60.00843824568167,
+      "cached": 60.008438245681674
+    },
+    {
+      "cell": "SENSITIVITY!E11",
+      "independent": 62.3407976590715,
+      "cached": 62.34079765907151
+    },
+    {
+      "cell": "SENSITIVITY!F11",
+      "independent": 64.94755229756602,
+      "cached": 64.94755229756602
+    },
+    {
+      "cell": "SENSITIVITY!G11",
+      "independent": 67.88015126587233,
+      "cached": 67.88015126587233
+    },
+    {
+      "cell": "SENSITIVITY!C12",
+      "independent": 55.11734251114614,
+      "cached": 55.11734251114615
+    },
+    {
+      "cell": "SENSITIVITY!D12",
+      "independent": 56.98167355400218,
+      "cached": 56.98167355400219
+    },
+    {
+      "cell": "SENSITIVITY!E12",
+      "independent": 59.04224996979045,
+      "cached": 59.04224996979046
+    },
+    {
+      "cell": "SENSITIVITY!F12",
+      "independent": 61.33177932066628,
+      "cached": 61.3317793206663
+    },
+    {
+      "cell": "SENSITIVITY!G12",
+      "independent": 63.890665065762825,
+      "cached": 63.89066506576284
+    },
+    {
+      "cell": "SENSITIVITY!C13",
+      "independent": 30.760256574837552,
+      "cached": 30.760256574837552
+    },
+    {
+      "cell": "SENSITIVITY!D13",
+      "independent": 32.11653008498224,
+      "cached": 32.11653008498224
+    },
+    {
+      "cell": "SENSITIVITY!E13",
+      "independent": 33.666556953719024,
+      "cached": 33.666556953719024
+    },
+    {
+      "cell": "SENSITIVITY!F13",
+      "independent": 35.45504949456916,
+      "cached": 35.45504949456916
+    },
+    {
+      "cell": "SENSITIVITY!G13",
+      "independent": 37.54162412556098,
+      "cached": 37.541624125560986
+    },
+    {
+      "cell": "SENSITIVITY!C14",
+      "independent": 28.954454445615635,
+      "cached": 28.954454445615635
+    },
+    {
+      "cell": "SENSITIVITY!D14",
+      "independent": 30.121485637314812,
+      "cached": 30.121485637314812
+    },
+    {
+      "cell": "SENSITIVITY!E14",
+      "independent": 31.444120987907223,
+      "cached": 31.444120987907223
+    },
+    {
+      "cell": "SENSITIVITY!F14",
+      "independent": 32.955704245727105,
+      "cached": 32.955704245727105
+    },
+    {
+      "cell": "SENSITIVITY!G14",
+      "independent": 34.69983877398083,
+      "cached": 34.69983877398083
+    },
+    {
+      "cell": "SENSITIVITY!C15",
+      "independent": 27.350096959533232,
+      "cached": 27.350096959533225
+    },
+    {
+      "cell": "SENSITIVITY!D15",
+      "independent": 28.361829916105545,
+      "cached": 28.361829916105545
+    },
+    {
+      "cell": "SENSITIVITY!E15",
+      "independent": 29.50002949224941,
+      "cached": 29.500029492249407
+    },
+    {
+      "cell": "SENSITIVITY!F15",
+      "independent": 30.78998901187911,
+      "cached": 30.789989011879108
+    },
+    {
+      "cell": "SENSITIVITY!G15",
+      "independent": 32.264228462884496,
+      "cached": 32.26422846288449
+    },
+    {
+      "cell": "SENSITIVITY!C16",
+      "independent": 25.915356321219733,
+      "cached": 25.915356321219733
+    },
+    {
+      "cell": "SENSITIVITY!D16",
+      "independent": 26.79831394771706,
+      "cached": 26.79831394771707
+    },
+    {
+      "cell": "SENSITIVITY!E16",
+      "independent": 27.785148942037626,
+      "cached": 27.78514894203762
+    },
+    {
+      "cell": "SENSITIVITY!F16",
+      "independent": 28.895338310648235,
+      "cached": 28.895338310648235
+    },
+    {
+      "cell": "SENSITIVITY!G16",
+      "independent": 30.153552928406945,
+      "cached": 30.153552928406945
+    },
+    {
+      "cell": "SENSITIVITY!C17",
+      "independent": 24.624770936905012,
+      "cached": 24.624770936905012
+    },
+    {
+      "cell": "SENSITIVITY!D17",
+      "independent": 25.3999522414052,
+      "cached": 25.39995224140521
+    },
+    {
+      "cell": "SENSITIVITY!E17",
+      "independent": 26.261264801960976,
+      "cached": 26.261264801960976
+    },
+    {
+      "cell": "SENSITIVITY!F17",
+      "independent": 27.223908251993898,
+      "cached": 27.223908251993898
+    },
+    {
+      "cell": "SENSITIVITY!G17",
+      "independent": 28.306882133280933,
+      "cached": 28.30688213328093
+    },
+    {
+      "cell": "PORTFOLIO!D3",
+      "independent": 266.2720559344821,
+      "cached": 266.2720559344821
+    },
+    {
+      "cell": "PORTFOLIO!G3",
+      "independent": 40000.0,
+      "cached": 40000
+    },
+    {
+      "cell": "PORTFOLIO!H3",
+      "independent": 257.2023533830612,
+      "cached": 257.2023533830612
+    },
+    {
+      "cell": "PORTFOLIO!D4",
+      "independent": 67.69534078050994,
+      "cached": 67.69534078050994
+    },
+    {
+      "cell": "PORTFOLIO!G4",
+      "independent": 35000.0,
+      "cached": 35000
+    },
+    {
+      "cell": "PORTFOLIO!H4",
+      "independent": 66.02825475069521,
+      "cached": 66.02825475069521
+    },
+    {
+      "cell": "PORTFOLIO!D5",
+      "independent": 30.21664817408745,
+      "cached": 30.21664817408745
+    },
+    {
+      "cell": "PORTFOLIO!G5",
+      "independent": 25000.0,
+      "cached": 25000
+    },
+    {
+      "cell": "PORTFOLIO!H5",
+      "independent": 29.500029492249407,
+      "cached": 29.500029492249407
+    },
+    {
+      "cell": "PORTFOLIO!F6",
+      "independent": 1.0,
+      "cached": 1
+    },
+    {
+      "cell": "PORTFOLIO!G6",
+      "independent": 100000.0,
+      "cached": 100000
+    }
+  ]
+}
