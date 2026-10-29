@@ -1,3 +1,15 @@
+# Accounts / Excel / Gemini release
+
+Source: `87d6518cb3660d219517ca9594a32b68d2ea5771`. Production deployment requested: `dpl_Et3nB8diVHa4rdswRE8zjVTwpQ8n`. Primary public alias remains https://mirror-x-three.vercel.app; it requires no Vercel registration. Protected generated deployment and preview URLs are for owner QA.
+
+Gemini key accepted by provider; actual fixed-prompt generation returned200 with `gemini-3.5-flash-lite`. Key stored in encrypted server variables only. Sign-in is still required for the assistant; a complete authenticated production assistant conversation has not been claimed as verified. Details: GEMINI_ACTIVATION.json.
+
+Account forms and Excel report layout are improved. Public signup/password recovery email delivery still requires operator SMTP/sender verification and redirect URL setup; these shared Supabase settings were not changed. Connected tools cannot provision that provider account or modify Auth settings. Concrete steps: ACCOUNT_AND_MAIL_SETUP.md. Guest market/Excel/local portfolio flows are working without registration.
+
+Verification: 69 unit/Postgres tests; 12 standard browser scenarios; additional mocked Auth UI signup/password/recovery checks; independent Excel chart/formula/print-layout/priced-total checks. No actual email sent. Prior releases below are historical.
+
+---
+
 # Текущий визуальный релиз
 
 - Production: https://mirror-x-three.vercel.app, **READY**.
