@@ -1,0 +1,104 @@
+{
+  "deploymentId": "dpl_4BFZ3yxGVNutvWjMV3AoFsRiuxY7",
+  "sourceCommit": "eea2c5bba3d3cb54ffccd013ec119b59059f428b",
+  "url": "https://mirror-x-three.vercel.app",
+  "environment": "production",
+  "ready": true,
+  "protection": "prod_deployment_urls_and_all_previews",
+  "supabaseProject": "edpuovkgoisyzpguksdi",
+  "schema": "mirror_x",
+  "snapshotId": "MX-3777d2e495a9",
+  "checks": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/api/health",
+        "status": 200,
+        "contentType": "application/json",
+        "cache": "no-store",
+        "body": {
+          "status": "ok",
+          "mode": "supabase",
+          "database": "CONNECTED",
+          "coverage": {
+            "instruments": 503,
+            "financialMetrics": 486,
+            "annualStatements": 3,
+            "datedPrices": 0,
+            "undatedQuotes": 486,
+            "asOf": null,
+            "importedAt": "2026-10-29"
+          },
+          "snapshotId": "MX-3777d2e495a9"
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/api/account",
+        "status": 200,
+        "contentType": "application/json",
+        "cache": "private, no-store",
+        "body": {
+          "configured": true,
+          "user": null
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/api/research",
+        "status": 401
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/api/screen?q=MSFT",
+        "status": 200,
+        "contentType": "application/json",
+        "cache": "public, max-age=300"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/api/export/xlsx",
+        "status": 200,
+        "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "cache": "public, max-age=0, must-revalidate",
+        "snapshotId": "MX-3777d2e495a9"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/api/export/pptx",
+        "status": 200,
+        "contentType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+        "cache": "public, max-age=0, must-revalidate",
+        "snapshotId": "MX-3777d2e495a9"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/api/export/xlsx?final=1",
+        "status": 409,
+        "contentType": "application/json",
+        "cache": "public, max-age=0, must-revalidate"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/api/internal/cloud-check",
+        "status": 404,
+        "contentType": "text/html; charset=utf-8",
+        "cache": "public, max-age=0, must-revalidate"
+      }
+    }
+  ]
+}

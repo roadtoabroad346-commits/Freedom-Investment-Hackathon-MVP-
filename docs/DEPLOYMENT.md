@@ -1,3 +1,23 @@
+# Текущая production-версия с Supabase
+
+- URL: https://mirror-x-three.vercel.app
+- Deployment: dpl_4BFZ3yxGVNutvWjMV3AoFsRiuxY7, READY, production.
+- Проверенный source SHA: eea2c5bba3d3cb54ffccd013ec119b59059f428b.
+- Supabase: edpuovkgoisyzpguksdi (Jetuu), одобренная схема mirror_x.
+- /api/health:200, mode=supabase, database=CONNECTED;503 records/3 annual facts.
+- /api/account:200,configured=true,user=null для гостя;private no-store.
+- /api/research без входа:401.
+- /api/screen?q=MSFT:200.
+- XLSX/PPTX:200, один snapshot MX-3777d2e495a9.
+- FINAL export:409 при текущих блокерах.
+- Временный QA endpoint в production отсутствует:404.
+- Защита Vercel: Standard Protection (prod_deployment_urls_and_all_previews); production domain предназначен для публичного просмотра, preview URLs защищены. Приватные исследования требуют Supabase Auth независимо от защиты Vercel.
+- Тарифы не повышались. Детали, фактические проверки и ограничения: CLOUD_INTEGRATION.md, CLOUD_VERIFICATION.json, CLOUD_PRODUCTION_SMOKE.json.
+
+Документационные коммиты после указанного source SHA не меняют исполняемый код production. Ниже сохранена история первого автономного размещения.
+
+---
+
 # Фактическое размещение — 29.10.2026
 
 - GitHub: https://github.com/roadtoabroad346-commits/Freedom-Investment-Hackathon-MVP-
