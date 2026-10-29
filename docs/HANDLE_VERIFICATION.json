@@ -43,5 +43,11 @@
   "newObjectSecurityFindings": 0,
   "sharedEmailAuthSettingsChanged": false,
   "paidPlanChanged": false,
-  "production": "Pending release"
+  "production": {
+    "deployment": "dpl_AYyzoFKjuexNx2c9dEVYSKNYdP7F",
+    "sourceCommit": "8c5e6598e6157a3b82b292f00a95350776245265",
+    "state": "READY",
+    "url": "https://mirror-x-three.vercel.app/account",
+    "smoke": "HANDLE_PRODUCTION_SMOKE.json"
+  }
 }

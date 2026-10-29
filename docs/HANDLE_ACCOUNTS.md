@@ -37,3 +37,7 @@ If password, recovery key and all active sessions are lost, recovery is intentio
 - Security advisors report no findings for the new objects. Existing unrelated Jetuu findings remain outside this change.
 
 `docs/HANDLE_VERIFICATION.json` records the proofs and production release. The protected QA handler exists only on the qa/handle-auth-check branch, not in production.
+
+## Rollback
+
+Keep the handle login/API available for existing handle users if disabling new signups. Rolling all the way back to the old email-only UI removes their ordinary login entry point even though their data/Auth identity remain intact. Do not drop recovery mappings or delete users as an application rollback.

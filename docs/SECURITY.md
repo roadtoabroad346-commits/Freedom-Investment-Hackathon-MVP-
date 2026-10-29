@@ -1,3 +1,11 @@
+# Current handle-auth addition
+
+The latest release uses an official Supabase Admin client only inside the isolated mirror-x-accounts Edge Function. Its service-role key comes from Supabase's built-in server environment, not Vercel or browsers. Normal research/workspace endpoints continue to use owner-scoped clients and RLS. New hash/budget tables and invoker RPCs are service-role only. The legacy public anon JWT stored server-side in Vercel is only a gateway credential, not an admin key. See HANDLE_ACCOUNTS.md for exact boundaries, abuse caps, recovery semantics and verification.
+
+The sections below describe earlier research/Excel releases; older statements about no Admin/service-role usage do not describe the new isolated identity function.
+
+---
+
 # Актуальная безопасность облачного среза
 
 См. CLOUD_INTEGRATION.md: частные authenticated API, RLS/security_invoker, Origin/body/model checks, private no-store и120 сохранений/мин в БД. Service-role не используется. Подтверждения: CLOUD_VERIFICATION.json. Ниже сохранён исторический анализ первого read-only среза; он не описывает текущую запись через API.

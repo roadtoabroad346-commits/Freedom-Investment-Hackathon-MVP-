@@ -1,3 +1,13 @@
+# Current release: no-domain, no-email registration
+
+Production **READY**: https://mirror-x-three.vercel.app/account . Deployment `dpl_AYyzoFKjuexNx2c9dEVYSKNYdP7F`, source `8c5e6598e6157a3b82b292f00a95350776245265`.
+
+Default signup is handle + password with a one-time recovery key. No SMTP, custom domain, real email, telephone or Vercel account is needed. Existing email Auth settings remain unchanged. The historical SMTP setup paragraphs below apply only to the optional email flow and do not block default registration.
+
+Evidence: HANDLE_ACCOUNTS.md, HANDLE_VERIFICATION.json, HANDLE_PRODUCTION_SMOKE.json. 78 unit/Postgres tests, 12 standard browser scenarios, configured UI signup/recovery checks and 12 actual remote Auth/API/DB checks passed. New Edge function keeps gateway JWT verification enabled. QA users and their cloud rows were removed. Production QA route:404; account:200; health:200/CONNECTED; registration GET:405 (POST only).
+
+---
+
 # Accounts / Excel / Gemini release
 
 Source: `87d6518cb3660d219517ca9594a32b68d2ea5771`. Production deployment requested: `dpl_Et3nB8diVHa4rdswRE8zjVTwpQ8n`. Primary public alias remains https://mirror-x-three.vercel.app; it requires no Vercel registration. Protected generated deployment and preview URLs are for owner QA.

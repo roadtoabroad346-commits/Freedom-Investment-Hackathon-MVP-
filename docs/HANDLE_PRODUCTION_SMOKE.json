@@ -1,0 +1,72 @@
+{
+  "deployment": "dpl_AYyzoFKjuexNx2c9dEVYSKNYdP7F",
+  "sourceCommit": "8c5e6598e6157a3b82b292f00a95350776245265",
+  "state": "READY",
+  "url": "https://mirror-x-three.vercel.app/account",
+  "checks": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/account",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "expectedText": true
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/api/health",
+        "status": 200,
+        "contentType": "application/json",
+        "body": {
+          "status": "ok",
+          "mode": "supabase",
+          "database": "CONNECTED",
+          "coverage": {
+            "instruments": 503,
+            "financialMetrics": 486,
+            "annualStatements": 3,
+            "datedPrices": 0,
+            "undatedQuotes": 486,
+            "asOf": null,
+            "importedAt": "2026-10-29"
+          },
+          "snapshotId": "MX-3777d2e495a9"
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/api/handle-account",
+        "status": 405
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/api/internal/handle-check",
+        "status": 404,
+        "contentType": "text/html; charset=utf-8"
+      }
+    }
+  ],
+  "remoteIntegrationChecks": {
+    "register_without_email": true,
+    "real_login": true,
+    "no_email_provided": true,
+    "second_account": true,
+    "cookie_to_api_to_database": true,
+    "other_user_cannot_read": true,
+    "recovery_without_email": true,
+    "new_password_works": true,
+    "old_password_rejected": true,
+    "recovery_key_single_use": true,
+    "authenticated_key_rotation": true,
+    "old_key_invalid_after_rotation": true
+  },
+  "temporaryAuthUsersRemaining": 0,
+  "temporaryHandleRowsRemaining": 0,
+  "temporaryWorkspaceRowsRemaining": 0
+}
