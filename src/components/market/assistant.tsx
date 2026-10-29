@@ -73,7 +73,7 @@ export function Assistant({ workspace }: { workspace?: Workspace }) {
           {configured === null
             ? "Проверка подключения"
             : configured
-              ? "Подключён"
+              ? "Настроен"
               : "Ожидает подключения"}
         </span>
       </div>

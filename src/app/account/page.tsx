@@ -4,9 +4,9 @@ export default function AccountPage() {
   return (
     <>
       <PageHead
-        eyebrow="ACCOUNT / SUPABASE AUTH"
+        eyebrow="ЛИЧНЫЙ КАБИНЕТ"
         title="Ваши исследования — на ваших устройствах"
-        description="Просмотр компаний доступен без входа. Аккаунт нужен для личных облачных заметок и моделей."
+        description="Просмотр компаний доступен без входа. Аккаунт MIRROR X нужен для сохранения между устройствами. Регистрация в Vercel не требуется."
       />
       <Account />
     </>

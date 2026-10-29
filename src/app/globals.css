@@ -2867,3 +2867,20 @@ details p {
     height: 17px;
   }
 }
+.password-toggle {
+  background: transparent;
+  border: 0;
+  color: var(--green);
+  padding: 10px 0;
+  min-height: 44px;
+  text-align: left;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+}
+.account-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}

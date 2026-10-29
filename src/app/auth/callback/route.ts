@@ -8,7 +8,14 @@ export async function GET(req: Request) {
       const client = await requestSupabase();
       const { error } = await client.auth.exchangeCodeForSession(code);
       if (!error)
-        return NextResponse.redirect(new URL("/watchlist", url.origin));
+        return NextResponse.redirect(
+          new URL(
+            url.searchParams.get("recovery") === "1"
+              ? "/account?recovery=1"
+              : "/workspace",
+            url.origin,
+          ),
+        );
     } catch {}
   }
   return NextResponse.redirect(

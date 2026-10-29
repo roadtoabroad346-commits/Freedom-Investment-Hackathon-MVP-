@@ -267,7 +267,25 @@ const navy = "17253D",
 function styleSheet(s: ExcelJS.Worksheet, headers: string[], widths: number[]) {
   s.addRow(headers);
   s.columns.forEach((c, i) => (c.width = widths[i] ?? 20));
-  s.views = [{ state: "frozen", ySplit: 1 }];
+  s.views = [{ state: "frozen", ySplit: 1, showGridLines: false }];
+  s.properties.defaultRowHeight = 23;
+  s.pageSetup = {
+    orientation: "landscape",
+    paperSize: 9,
+    fitToPage: true,
+    fitToWidth: 1,
+    fitToHeight: 0,
+    printTitlesRow: "1:1",
+    margins: {
+      left: 0.3,
+      right: 0.3,
+      top: 0.4,
+      bottom: 0.4,
+      header: 0.2,
+      footer: 0.2,
+    },
+  };
+  s.headerFooter = { oddFooter: "&LMIRROR X · USD&RСтраница &P / &N" };
   s.getRow(1).height = 30;
   s.getRow(1).eachCell((c) => {
     c.fill = { type: "pattern", pattern: "solid", fgColor: { argb: navy } };
@@ -367,6 +385,14 @@ export async function workbook(w: Workspace, template = false) {
       f.debt,
       f.source,
     ]);
+  positions.autoFilter = {
+    from: "A1",
+    to: `D${Math.max(1, positions.rowCount)}`,
+  };
+  financials.autoFilter = {
+    from: "A1",
+    to: `G${Math.max(1, financials.rowCount)}`,
+  };
   for (const i of [3, 4, 5, 6]) financials.getColumn(i).numFmt = "#,##0.00";
   const portfolio = portfolioMetrics(w);
   const summary = wb.addWorksheet("Summary");
@@ -380,7 +406,7 @@ export async function workbook(w: Workspace, template = false) {
       "Вес оценённых",
       "Дата цены",
     ],
-    [15, 23, 23, 23, 23, 18],
+    [27, 23, 23, 23, 23, 18],
   );
   portfolio.rows.forEach((r, i) => {
     const n = i + 2;
@@ -409,7 +435,18 @@ export async function workbook(w: Workspace, template = false) {
         },
       ],
     });
-  summary.addRow(["TOTAL", portfolio.total, portfolio.cost, portfolio.pnl]);
+  const totalRow = summary.addRow([
+    "ИТОГО ОЦЕНЕНО",
+    portfolio.total,
+    portfolio.cost,
+    portfolio.pnl,
+  ]);
+  totalRow.eachCell((c) => {
+    c.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "EAF5EF" } };
+    c.font = { bold: true, color: { argb: green } };
+  });
+  summary.addRow(["Итог включает только позиции с загруженной ценой"]);
+  summary.addRow(["Даты оценки", portfolio.dates.join(" — ")]);
   summary.addRow(["Не оценены", portfolio.missing]);
   const analytics = wb.addWorksheet("Analytics");
   styleSheet(

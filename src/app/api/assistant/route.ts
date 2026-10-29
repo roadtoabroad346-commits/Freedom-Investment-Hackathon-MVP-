@@ -96,10 +96,18 @@ export async function POST(req: Request) {
         companies,
         personal,
       }),
+      providerOptions: {
+        google: { thinkingConfig: { thinkingLevel: "minimal" } },
+      },
       maxOutputTokens: 2200,
       maxRetries: 0,
       abortSignal: AbortSignal.timeout(45000),
     });
+    if (!result.text.trim())
+      return apiError(
+        "Gemini не вернул текст. Попробуйте более короткий вопрос.",
+        502,
+      );
     return Response.json(
       {
         text: result.text,
@@ -110,7 +118,13 @@ export async function POST(req: Request) {
       },
       { headers: privateHeaders },
     );
-  } catch {
+  } catch (error) {
+    const status =
+      typeof error === "object" && error !== null && "statusCode" in error
+        ? Number(error.statusCode)
+        : null;
+    if (status === 429)
+      return apiError("Лимит запросов Gemini исчерпан. Повторите позже.", 429);
     return apiError(
       "Не удалось получить ответ Gemini. Проверьте подключение или повторите позже.",
       502,
