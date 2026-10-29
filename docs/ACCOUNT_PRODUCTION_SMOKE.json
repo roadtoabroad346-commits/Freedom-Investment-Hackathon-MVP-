@@ -1,0 +1,46 @@
+{
+  "deployment": "dpl_Et3nB8diVHa4rdswRE8zjVTwpQ8n",
+  "sourceCommit": "87d6518cb3660d219517ca9594a32b68d2ea5771",
+  "state": "READY",
+  "checks": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/account",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "expected": true
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/api/assistant",
+        "status": 200,
+        "contentType": "application/json",
+        "body": {
+          "configured": true,
+          "dailyLimit": 10
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/api/health",
+        "status": 200,
+        "contentType": "application/json"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "/api/spreadsheets/template",
+        "status": 200,
+        "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      }
+    }
+  ],
+  "smtpConfiguredByAgent": false,
+  "publicEmailDeliveryVerified": false
+}
