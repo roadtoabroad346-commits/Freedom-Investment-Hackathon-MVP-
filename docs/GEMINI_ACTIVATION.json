@@ -1,0 +1,18 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "keyStorage": "encrypted Vercel environment variable, production and preview",
+  "keyInRepository": false,
+  "keyInBrowser": false,
+  "modelsEndpointAccepted": true,
+  "actualProviderGenerationVerified": true,
+  "providerStatus": 200,
+  "fixedPromptResultVerified": true,
+  "verificationEnvironment": "protected Vercel preview",
+  "personalDataSentInTest": false,
+  "productionAuthenticatedAssistantFlowVerified": false,
+  "discoveryNotes": "gemini-3.8-flash timed out; 2.5-flash-lite returned NOT_FOUND; selected the discovered and tested low-latency 3.5-flash-lite model",
+  "supabaseEmailEnabled": true,
+  "supabaseSignupDisabled": false,
+  "supabaseEmailAutoconfirm": false,
+  "smtpDeliveryVerified": false
+}

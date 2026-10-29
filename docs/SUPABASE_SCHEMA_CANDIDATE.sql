@@ -1,0 +1,3 @@
+-- Historical candidate superseded. Do not apply this file.
+-- Actual additive migrations: supabase/migrations/*_mirror_x_*.sql
+-- Target: owner-approved mirror_x schema in Jetuu. See README and CLOUD_INTEGRATION.md.

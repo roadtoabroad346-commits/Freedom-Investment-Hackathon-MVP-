@@ -1,0 +1,94 @@
+export type Quality = "PROVISIONAL" | "UNDATED" | "STALE" | "MISSING";
+export type Instrument = {
+  ticker: string;
+  name: string;
+  sector: string;
+  exchange: string | null;
+  assetType: "COMMON" | "ADR" | "UNKNOWN";
+  price: number | null;
+  priceAsOf: string | null;
+  marketCap: number | null;
+  pe: number | null;
+  ebitda: number | null;
+  priceSales: number | null;
+  priceBook: number | null;
+  sourceUrl: string;
+  quality: Quality;
+  avgDollarVolume: number | null;
+  historyYears: number | null;
+  restrictedRevenueShare: number | null;
+};
+export type AnnualFact = {
+  periodEnd: string;
+  revenue: number;
+  operatingIncome: number;
+  dilutedShares: number;
+  cash: number;
+  debt: number;
+  taxRate: number;
+  sourceUrl: string;
+  filedAt: string;
+  priorRevenue: number;
+  history: { year: string; revenue: number; operatingIncome: number }[];
+};
+export type Assumptions = {
+  revenue: number;
+  growth: number;
+  margin: number;
+  taxRate: number;
+  daRate: number;
+  capexRate: number;
+  nwcRate: number;
+  wacc: number;
+  terminalGrowth: number;
+  shares: number;
+  netDebt: number;
+  currency: "USD";
+};
+export type CompanyResearch = {
+  ticker: string;
+  business: string;
+  moat: string;
+  thesis: string;
+  contra: string;
+  catalysts: { event: string; window: string; evidence: string }[];
+  risks: {
+    name: string;
+    probability: string;
+    impact: string;
+    trigger: string;
+  }[];
+  macro: string[];
+  assumptions: Omit<Assumptions, "revenue" | "shares" | "netDebt" | "currency">;
+  allocationBps: number;
+  sourceUrl: string;
+  rationale: string;
+};
+export type Gate = {
+  name: string;
+  status: "PASS" | "FAIL" | "REVIEW";
+  reason: string;
+};
+export type Snapshot = {
+  id: string;
+  generatedAt: string;
+  cutoff: string;
+  modelVersion: string;
+  scoreVersion: string;
+  sourceHash: string;
+  status: "PRELIMINARY" | "FINAL";
+  companies: {
+    ticker: string;
+    name: string;
+    price: number | null;
+    priceAsOf: string | null;
+    fairValue: number | null;
+    target12m: number | null;
+    upside: number | null;
+    allocationBps: number;
+    recommendation: "NOT-RATED" | "BUY";
+    reviewed: boolean;
+    gates: Gate[];
+  }[];
+  blockers: string[];
+};

@@ -1,0 +1,89 @@
+{
+  "ADBE": {
+    "periodEnd": "2025-11-28",
+    "filedAt": "2026-01-15",
+    "revenue": 23769,
+    "priorRevenue": 21505,
+    "operatingIncome": 8706,
+    "dilutedShares": 427,
+    "cash": 6595,
+    "debt": 6210,
+    "taxRate": 0.18365010304556903,
+    "sourceUrl": "https://www.adobe.com/cc-shared/assets/investor-relations/pdfs/adbe-2025-annual-report.pdf",
+    "history": [
+      {
+        "year": "2023",
+        "revenue": 19409,
+        "operatingIncome": 6650
+      },
+      {
+        "year": "2024",
+        "revenue": 21505,
+        "operatingIncome": 6741
+      },
+      {
+        "year": "2025",
+        "revenue": 23769,
+        "operatingIncome": 8706
+      }
+    ]
+  },
+  "PYPL": {
+    "periodEnd": "2025-12-31",
+    "filedAt": "2026-02-03",
+    "revenue": 33172,
+    "priorRevenue": 31797,
+    "operatingIncome": 6065,
+    "dilutedShares": 968,
+    "cash": 10422,
+    "debt": 9987,
+    "taxRate": 0.1683089637635092,
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000024/pypl-20251231.htm",
+    "history": [
+      {
+        "year": "2023",
+        "revenue": 29771,
+        "operatingIncome": 5028
+      },
+      {
+        "year": "2024",
+        "revenue": 31797,
+        "operatingIncome": 5325
+      },
+      {
+        "year": "2025",
+        "revenue": 33172,
+        "operatingIncome": 6065
+      }
+    ]
+  },
+  "NKE": {
+    "periodEnd": "2026-05-31",
+    "filedAt": "2026-07-15",
+    "revenue": 46398,
+    "priorRevenue": 46309,
+    "operatingIncome": 3797,
+    "dilutedShares": 1481,
+    "cash": 9027,
+    "debt": 7942,
+    "taxRate": 0.20307692307692307,
+    "sourceUrl": "https://investors.nike.com/sec-filings/all-sec-filings/content/0000320187-26-000088/nke-20260531.htm",
+    "history": [
+      {
+        "year": "2024",
+        "revenue": 51362,
+        "operatingIncome": 6311
+      },
+      {
+        "year": "2025",
+        "revenue": 46309,
+        "operatingIncome": 3702
+      },
+      {
+        "year": "2026",
+        "revenue": 46398,
+        "operatingIncome": 3797
+      }
+    ]
+  }
+}

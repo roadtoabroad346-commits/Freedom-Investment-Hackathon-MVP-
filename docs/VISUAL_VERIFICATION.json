@@ -1,0 +1,57 @@
+{
+  "verifiedAt": "2026-10-29",
+  "local": {
+    "unitAndPostgresTests": 69,
+    "chromiumScenarios": 12,
+    "productionBuild": "PASS",
+    "format": "PASS",
+    "productionDependencyVulnerabilities": 0,
+    "independentExcelParser": "openpyxl 3.1.5",
+    "nativeWorkbooksVerified": 3,
+    "existingContestFormulaCellsVerified": 230,
+    "contestSnapshot": "MX-3777d2e495a9",
+    "contestStatus": "PRELIMINARY"
+  },
+  "remoteDatabase": {
+    "project": "edpuovkgoisyzpguksdi",
+    "schema": "mirror_x",
+    "newTablesRls": true,
+    "invokerPublicView": true,
+    "invokerSaveRpc": true,
+    "ownerRoundtrip": true,
+    "optimisticConcurrency": true,
+    "anonymousDenied": true,
+    "crossUserReadWriteDenied": true,
+    "forgedOwnerDenied": true,
+    "ownerDelete": true,
+    "aiPersistentDailyQuota": true,
+    "aiQuotaCannotReset": true,
+    "independentUserQuota": true,
+    "fixturesRolledBack": true,
+    "workspacesAfterTest": 0,
+    "aiUsageAfterTest": 0,
+    "referenceRecords": 503,
+    "newObjectSecurityAdvisorFindings": 0,
+    "legacyJetuuFindingsOutOfScope": true
+  },
+  "gemini": {
+    "implementation": "READY_FOR_CONFIGURATION",
+    "providerCallVerified": false,
+    "reason": "Owner has not supplied GEMINI_API_KEY and GEMINI_MODEL",
+    "browserKeyExposure": false,
+    "signInRequired": true,
+    "dailyAttemptsPerUser": 10,
+    "providerRetries": 0,
+    "timeoutSeconds": 45,
+    "maxOutputTokens": 2200
+  },
+  "liveMarketFeedConnected": false,
+  "paidPlanUpgrade": false,
+  "deployment": {
+    "id": "dpl_5w9q182QcAg2T1Le82V2VjLpwfyQ",
+    "sourceCommit": "67cc68d38602b75efd47b946ec26832a450b0d38",
+    "url": "https://mirror-x-three.vercel.app",
+    "state": "READY",
+    "smoke": "docs/VISUAL_PRODUCTION_SMOKE.json"
+  }
+}
