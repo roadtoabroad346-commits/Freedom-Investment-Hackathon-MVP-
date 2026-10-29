@@ -182,3 +182,81 @@ describe("Real PostgreSQL RLS and atomic migration", () => {
     ).toHaveLength(1);
   });
 });
+
+describe("Visual workspace ownership, concurrency and AI quota", () => {
+  it("anonymous cannot read workspace or claim quota", async () => {
+    await actor(null);
+    await expect(
+      db.query("select * from public.mx_market_workspaces"),
+    ).rejects.toThrow("permission denied");
+    await expect(
+      db.query("select public.mx_claim_ai_request()"),
+    ).rejects.toThrow("permission denied");
+  });
+  it("owner saves, restores and updates the payload with compare-and-swap", async () => {
+    await actor(A);
+    const first = await db.query<{ revision: number }>(
+      "select * from public.mx_save_market_workspace('{\"version\":1}',0)",
+    );
+    expect(first.rows[0].revision).toBe(1);
+    await expect(
+      db.query("select * from public.mx_save_market_workspace('{}',0)"),
+    ).rejects.toThrow("MX_CONFLICT");
+    await expect(
+      db.query("select * from public.mx_save_market_workspace('{}',5)"),
+    ).rejects.toThrow("MX_CONFLICT");
+    const next = await db.query<{ revision: number }>(
+      'select * from public.mx_save_market_workspace(\'{"version":1,"name":"updated"}\',1)',
+    );
+    expect(next.rows[0].revision).toBe(2);
+  });
+  it("another user cannot see, remove or forge ownership", async () => {
+    await actor(B);
+    expect(
+      (await db.query("select * from public.mx_market_workspaces")).rows,
+    ).toHaveLength(0);
+    expect(
+      (
+        await db.query(
+          "delete from public.mx_market_workspaces where user_id=$1 returning user_id",
+          [A],
+        )
+      ).rows,
+    ).toHaveLength(0);
+    await expect(
+      db.query(
+        "insert into mirror_x.market_workspaces(user_id,payload) values($1,'{}')",
+        [A],
+      ),
+    ).rejects.toThrow("row-level security");
+  });
+  it("AI quota is persistent, owner-scoped and cannot be reset by the client", async () => {
+    await actor(A);
+    for (let i = 0; i < 10; i++)
+      expect(
+        (
+          await db.query<{ ok: boolean }>(
+            "select public.mx_claim_ai_request() as ok",
+          )
+        ).rows[0].ok,
+      ).toBe(true);
+    expect(
+      (
+        await db.query<{ ok: boolean }>(
+          "select public.mx_claim_ai_request() as ok",
+        )
+      ).rows[0].ok,
+    ).toBe(false);
+    await expect(db.exec("delete from mirror_x.ai_usage")).rejects.toThrow(
+      "permission denied",
+    );
+    await actor(B);
+    expect(
+      (
+        await db.query<{ ok: boolean }>(
+          "select public.mx_claim_ai_request() as ok",
+        )
+      ).rows[0].ok,
+    ).toBe(true);
+  });
+});

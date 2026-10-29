@@ -3,11 +3,15 @@ test("A: general investor filters, arbitrary company, sources and individual exp
   page,
 }) => {
   await page.goto("/explore");
-  await expect(page.getByTestId("result-count")).toHaveText("Найдено: 503");
+  await expect(
+    page.getByTestId("result-count").filter({ visible: true }),
+  ).toHaveText("Найдено: 503");
   await page.locator("select[name=pe]").selectOption("15");
   await page.locator("select[name=cap]").selectOption("100000000000");
   await page.getByRole("button", { name: "Применить" }).click();
-  await expect(page.getByTestId("result-count")).not.toHaveText("Найдено: 503");
+  await expect(
+    page.getByTestId("result-count").filter({ visible: true }),
+  ).not.toHaveText("Найдено: 503");
   await page.goto("/company/MSFT");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("MSFT");
   await expect(

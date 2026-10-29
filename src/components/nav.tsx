@@ -10,9 +10,13 @@ import {
   BookOpen,
   ArrowUpRight,
   PanelTop,
+  ChartNoAxesCombined,
+  ChartCandlestick,
 } from "lucide-react";
 const items = [
   { href: "/", label: "Обзор", icon: PanelTop },
+  { href: "/market", label: "Обзор рынка", icon: ChartNoAxesCombined },
+  { href: "/workspace", label: "Графики и портфель", icon: ChartCandlestick },
   { href: "/explore", label: "Компании", icon: Compass },
   { href: "/compare", label: "Сравнение", icon: GitCompareArrows },
   { href: "/watchlist", label: "Мои исследования", icon: Bookmark },

@@ -71,3 +71,26 @@ describe("Private write boundary", () => {
     ).toBe(false);
   });
 });
+
+it("same-origin protection uses the browser host behind an internal Next.js URL", () => {
+  const proxyRequest = new Request("http://localhost:3000/api/research", {
+    method: "POST",
+    headers: {
+      host: "127.0.0.1:3000",
+      origin: "http://127.0.0.1:3000",
+      "content-type": "application/json",
+    },
+    body: "{}",
+  });
+  expect(mutationGuard(proxyRequest)).toBeNull();
+  const forgedOrigin = new Request("http://localhost:3000/api/research", {
+    method: "POST",
+    headers: {
+      host: "mirror.example",
+      origin: "https://attacker.example",
+      "content-type": "application/json",
+    },
+    body: "{}",
+  });
+  expect(mutationGuard(forgedOrigin)?.status).toBe(403);
+});

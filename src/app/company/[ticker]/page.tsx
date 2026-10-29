@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FundamentalCharts } from "@/components/market/lazy-research";
 import { notFound } from "next/navigation";
 import { ArrowUpRight, Download, ShieldAlert, ArrowLeft } from "lucide-react";
 import { getDataset } from "@/lib/repository";
@@ -116,6 +117,15 @@ export default async function Company({
             />
           </>
         )}
+      </div>
+      {f && <FundamentalCharts fact={f} ticker={ticker} />}
+      <div className="toolbar">
+        <Link className="button secondary" href="/workspace">
+          Загрузить котировки и построить график
+        </Link>
+        <Link className="text-link" href="/market">
+          Обзор рынка →
+        </Link>
       </div>
       {r ? (
         <>

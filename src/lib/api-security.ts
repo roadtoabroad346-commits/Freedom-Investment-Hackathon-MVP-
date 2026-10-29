@@ -9,10 +9,23 @@ export function apiError(message: string, status = 400) {
     { status, headers: privateHeaders },
   );
 }
+export function requestOriginMatches(req: Request) {
+  const raw = req.headers.get("origin");
+  if (!raw) return false;
+  try {
+    const origin = new URL(raw);
+    const host = req.headers.get("host") ?? new URL(req.url).host;
+    return (
+      ["https:", "http:"].includes(origin.protocol) &&
+      origin.host.toLowerCase() === host.toLowerCase() &&
+      origin.origin === raw
+    );
+  } catch {
+    return false;
+  }
+}
 export function mutationGuard(req: Request) {
-  const origin = req.headers.get("origin"),
-    site = new URL(req.url).origin;
-  if (!origin || origin !== site)
+  if (!requestOriginMatches(req))
     return apiError("Запрос должен исходить с этого сайта", 403);
   if (!req.headers.get("content-type")?.startsWith("application/json"))
     return apiError("Нужен JSON", 415);

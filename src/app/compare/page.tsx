@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ComparisonChart } from "@/components/market/lazy-research";
 import { getDataset } from "@/lib/repository";
 export const dynamic = "force-dynamic";
 import { PageHead, Notice, Source } from "@/components/ui";
@@ -45,6 +46,15 @@ export default async function Compare({
         мультипликаторов само по себе не доказывает, что одна компания дешевле
         другой.
       </Notice>
+      {companies.some((c) => c && annualFacts[c.ticker]) && (
+        <ComparisonChart
+          facts={companies.flatMap((c) =>
+            c && annualFacts[c.ticker]
+              ? [{ ticker: c.ticker, fact: annualFacts[c.ticker] }]
+              : [],
+          )}
+        />
+      )}
       <div className="three-col">
         {companies.map((c, i) =>
           c ? (

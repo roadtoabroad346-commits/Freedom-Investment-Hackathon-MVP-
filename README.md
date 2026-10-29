@@ -79,3 +79,9 @@ Vercel получает только `NEXT_PUBLIC_SUPABASE_URL` и `NEXT_PUBLIC_
 Миграции в `supabase/migrations/` применяются только к согласованному проекту. `npm exec --package=supabase@2.122.0 -- supabase migration new <name>` создаёт новую миграцию. `npx tsx scripts/seed-sql.ts work/mirror-x-seed.json` готовит идемпотентные SQL-пакеты справочника; выполнять их можно через SQL Editor/MCP владельца. Они не изменяют личные исследования.
 
 Без входа старые локальные записи остаются доступны. После входа кнопка «Перенести локальные записи» добавляет новые облачные записи атомарно, сохраняет локальные оригиналы и не перезаписывает облачные заметки. Для отката приложения можно убрать облачные env vars и развернуть предыдущий код; данные Supabase сохранятся. Удаление базы или схемы для отката не требуется.
+
+## Visual market, personal charts, portfolio and business data
+
+Open `/market` for the visual reference universe and `/workspace` for personal XLSX/CSV uploads, OHLC charts, allocation/P&L and business financial charts. Download the empty spreadsheet template from `/api/spreadsheets/template`; the UI validates and previews data before applying it. Personal Excel exports contain editable native charts and source/limitation notes. Cloud saves use owner RLS and revision checks in the approved `mirror_x` schema.
+
+Gemini is optional and remains visibly disabled without server-only `GEMINI_API_KEY` and `GEMINI_MODEL` in Vercel. Do not place the key in browser variables or commit it. Full data contracts, privacy, limits, verification and rollback: [docs/VISUAL_WORKSPACE.md](docs/VISUAL_WORKSPACE.md).

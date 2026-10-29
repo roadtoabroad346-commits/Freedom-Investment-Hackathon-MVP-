@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { DcfCharts } from "./market/lazy-research";
 import { useAuth } from "./auth/provider";
 import { cloudSave, cloudResearch } from "@/lib/cloud-client";
 import {
@@ -273,6 +274,7 @@ export function Valuation({
                     </article>
                   ))}
                 </div>
+                <DcfCharts assumptions={a} />
                 <article className="panel">
                   <h2>Какие ожидания заложены в цене?</h2>
                   <p>

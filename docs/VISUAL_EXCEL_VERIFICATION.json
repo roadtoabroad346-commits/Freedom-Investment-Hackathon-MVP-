@@ -1,0 +1,27 @@
+{
+  "parser": "openpyxl 3.1.5",
+  "checks": [
+    {
+      "artifact": "visual-export-test.xlsx",
+      "valid": true,
+      "native_charts": 1,
+      "series_formula": "'Prices'!$F$2:$F$4",
+      "data_rows": 5
+    },
+    {
+      "artifact": "visual-export-test.xlsx.business.xlsx",
+      "valid": true,
+      "native_charts": 1,
+      "series_formula": "'Financials'!$C$2:$C$2",
+      "data_rows": 1
+    },
+    {
+      "artifact": "visual-export-test.xlsx.market.xlsx",
+      "valid": true,
+      "native_charts": 1,
+      "series_formula": "'Industries'!$B$2:$B$13",
+      "data_rows": 503
+    }
+  ],
+  "all_passed": true
+}

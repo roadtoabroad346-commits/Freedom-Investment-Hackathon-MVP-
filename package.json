@@ -17,15 +17,19 @@
     "lint": "prettier --check src tests scripts package.json tsconfig.json next.config.ts playwright.config.ts vitest.config.ts"
   },
   "dependencies": {
+    "@ai-sdk/google": "4.0.107",
     "@supabase/ssr": "0.12.7",
     "@supabase/supabase-js": "2.118.0",
+    "ai": "7.0.156",
     "csv-parse": "7.0.3",
     "exceljs": "4.4.0",
+    "jszip": "3.10.1",
     "lucide-react": "0.468.0",
     "next": "16.4.3",
     "pptxgenjs": "4.0.0",
     "react": "19.3.1",
     "react-dom": "19.3.1",
+    "recharts": "3.10.1",
     "zod": "4.6.7"
   },
   "devDependencies": {

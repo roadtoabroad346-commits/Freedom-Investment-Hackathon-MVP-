@@ -17,6 +17,22 @@ export default async function Home() {
   const c = coverage();
   return (
     <>
+      <div className="market-entry">
+        <div>
+          <span className="eyebrow">НОВОЕ РАБОЧЕЕ ПРОСТРАНСТВО</span>
+          <h2>Увидеть рынок. Разобраться в портфеле.</h2>
+          <p>
+            Графики, отраслевая карта и ваши таблицы Excel — от загрузки до
+            визуального отчёта.
+          </p>
+        </div>
+        <Link className="button" href="/market">
+          Открыть обзор рынка <ArrowUpRight size={17} aria-hidden="true" />
+        </Link>
+        <Link className="button secondary" href="/workspace">
+          Загрузить свою таблицу
+        </Link>
+      </div>
       <div className="home-intro">
         <div className="eyebrow">
           <span className="tiny-line" /> ОТ ДАННЫХ К ИНВЕСТИЦИОННОЙ ИДЕЕ
