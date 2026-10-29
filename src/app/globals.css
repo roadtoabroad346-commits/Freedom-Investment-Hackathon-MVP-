@@ -2884,3 +2884,43 @@ details p {
   gap: 10px;
   flex-wrap: wrap;
 }
+.account-methods {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 0 22px;
+}
+.recovery-card {
+  max-width: 760px;
+  margin: 22px 0;
+  border: 2px solid #8bb7a1;
+}
+.recovery-card > svg {
+  color: var(--green);
+  margin-bottom: 12px;
+}
+.recovery-code {
+  display: block;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+  padding: 18px;
+  background: #edf3f7;
+  border: 1px solid #cedbe4;
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 20px 0;
+}
+.recovery-card small {
+  display: block;
+  margin: 20px 0 0;
+  color: var(--muted);
+}
+.account-panel > h2 {
+  margin-top: 22px;
+}
+.account-panel form > small {
+  font-size: 12px;
+  color: var(--muted);
+}

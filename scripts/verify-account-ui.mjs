@@ -33,6 +33,9 @@ try {
   });
   await page.goto("http://127.0.0.1:3100/account");
   await page
+    .getByRole("button", { name: "У меня уже есть аккаунт по email" })
+    .click();
+  await page
     .getByRole("button", { name: "Создать аккаунт", exact: true })
     .first()
     .click();

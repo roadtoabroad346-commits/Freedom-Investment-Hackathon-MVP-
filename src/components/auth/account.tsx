@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { HandleAccount, HandleRecovery } from "./handle-account";
+import { handleFromEmail } from "@/lib/handle-auth";
 import { Eye, EyeOff } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "./provider";
@@ -19,7 +21,7 @@ export function AccountButton() {
     </Link>
   );
 }
-export function Account() {
+function EmailAccount() {
   const {
     user,
     ready,
@@ -179,7 +181,9 @@ export function Account() {
     return (
       <div className="panel account-panel">
         <h2>Облачный аккаунт</h2>
-        <p>{user.email ?? "Пользователь Supabase"}</p>
+        <p>
+          {handleFromEmail(user.email) ?? user.email ?? "Пользователь MIRROR X"}
+        </p>
         <p>
           Заметки, watchlist и сценарии доступны на других устройствах после
           входа. Локальные записи автоматически не удаляются.
@@ -328,5 +332,36 @@ export function Account() {
       )}
       {message && <p role="status">{message}</p>}
     </div>
+  );
+}
+
+export function Account() {
+  const { user } = useAuth();
+  const [emailMode, setEmailMode] = useState(false);
+  if (user)
+    return (
+      <>
+        <EmailAccount />
+        {handleFromEmail(user.email) && <HandleRecovery />}
+      </>
+    );
+  return (
+    <>
+      <div className="account-methods">
+        <button
+          className={`button ${emailMode ? "secondary" : ""}`}
+          onClick={() => setEmailMode(false)}
+        >
+          Логин без почты
+        </button>
+        <button className="password-toggle" onClick={() => setEmailMode(true)}>
+          У меня уже есть аккаунт по email
+        </button>
+      </div>
+      {emailMode ? <EmailAccount /> : <HandleAccount />}
+      <Link className="text-link" href="/workspace">
+        Продолжить с Excel без входа →
+      </Link>
+    </>
   );
 }

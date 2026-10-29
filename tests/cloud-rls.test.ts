@@ -14,7 +14,7 @@ async function actor(id: string | null) {
 beforeAll(async () => {
   db = new PGlite();
   await db.exec(
-    `create role anon;create role authenticated;create schema auth;create table auth.users(id uuid primary key);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;grant usage on schema auth to anon,authenticated;grant execute on function auth.uid() to anon,authenticated;`,
+    `create role anon;create role authenticated;create role service_role bypassrls;create schema auth;create table auth.users(id uuid primary key);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;grant usage on schema auth to anon,authenticated;grant execute on function auth.uid() to anon,authenticated;`,
   );
   for (const file of (await readdir("supabase/migrations"))
     .filter((x) => x.endsWith(".sql"))
@@ -258,5 +258,119 @@ describe("Visual workspace ownership, concurrency and AI quota", () => {
         )
       ).rows[0].ok,
     ).toBe(true);
+  });
+});
+
+describe("Server-only handle registration and single-use recovery", () => {
+  it("anonymous and authenticated clients cannot inspect hashes or initialize identities", async () => {
+    for (const id of [null, A]) {
+      await actor(id);
+      await expect(
+        db.exec("select * from mirror_x.handle_accounts"),
+      ).rejects.toThrow("permission denied");
+      await expect(
+        db.query("select public.mx_initialize_handle('forged',$1,$2)", [
+          B,
+          "a".repeat(64),
+        ]),
+      ).rejects.toThrow("permission denied");
+      await expect(
+        db.query("select public.mx_exchange_handle_recovery('someone',$1,$2)", [
+          "a".repeat(64),
+          "b".repeat(64),
+        ]),
+      ).rejects.toThrow("permission denied");
+      await expect(
+        db.query("select public.mx_handle_budget($1)", ["a".repeat(64)]),
+      ).rejects.toThrow("permission denied");
+    }
+  });
+  it("backend creates a handle mapping and recovery claims are atomic and single-use", async () => {
+    await db.exec("reset role;set role service_role");
+    await db.query(
+      "select public.mx_initialize_handle('investor_test',$1,$2)",
+      [A, "a".repeat(64)],
+    );
+    expect(
+      (
+        await db.query<{ id: string | null }>(
+          "select public.mx_exchange_handle_recovery('investor_test',$1,$2) as id",
+          ["c".repeat(64), "b".repeat(64)],
+        )
+      ).rows[0].id,
+    ).toBeNull();
+    expect(
+      (
+        await db.query<{ id: string }>(
+          "select public.mx_exchange_handle_recovery('investor_test',$1,$2) as id",
+          ["a".repeat(64), "b".repeat(64)],
+        )
+      ).rows[0].id,
+    ).toBe(A);
+    expect(
+      (
+        await db.query<{ id: string | null }>(
+          "select public.mx_exchange_handle_recovery('investor_test',$1,$2) as id",
+          ["a".repeat(64), "c".repeat(64)],
+        )
+      ).rows[0].id,
+    ).toBeNull();
+  });
+  it("authenticated users cannot reset another identity or rotate its key", async () => {
+    await actor(B);
+    await expect(
+      db.query("select public.mx_rotate_handle_recovery($1,$2)", [
+        A,
+        "c".repeat(64),
+      ]),
+    ).rejects.toThrow("permission denied");
+    await expect(
+      db.query(
+        "update mirror_x.handle_accounts set recovery_hash=$1 where user_id=$2",
+        ["c".repeat(64), A],
+      ),
+    ).rejects.toThrow("permission denied");
+  });
+  it("trusted backend rotates the recovery hash without changing ownership", async () => {
+    await db.exec("reset role;set role service_role");
+    expect(
+      (
+        await db.query<{ handle: string }>(
+          "select public.mx_rotate_handle_recovery($1,$2) as handle",
+          [A, "d".repeat(64)],
+        )
+      ).rows[0].handle,
+    ).toBe("investor_test");
+    expect(
+      (
+        await db.query<{ id: string | null }>(
+          "select public.mx_exchange_handle_recovery('investor_test',$1,$2) as id",
+          ["b".repeat(64), "c".repeat(64)],
+        )
+      ).rows[0].id,
+    ).toBeNull();
+  });
+  it("backend enforces persistent request budgets and rejects invalid fingerprints", async () => {
+    await db.exec("reset role;set role service_role");
+    await expect(
+      db.query("select public.mx_handle_budget('bad')"),
+    ).rejects.toThrow("MX_INVALID_FINGERPRINT");
+    for (let i = 0; i < 10; i++)
+      expect(
+        (
+          await db.query<{ ok: boolean }>(
+            "select public.mx_handle_budget($1) as ok",
+            ["f".repeat(64)],
+          )
+        ).rows[0].ok,
+      ).toBe(true);
+    expect(
+      (
+        await db.query<{ ok: boolean }>(
+          "select public.mx_handle_budget($1) as ok",
+          ["f".repeat(64)],
+        )
+      ).rows[0].ok,
+    ).toBe(false);
   });
 });
