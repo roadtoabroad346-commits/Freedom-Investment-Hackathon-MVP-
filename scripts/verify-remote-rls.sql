@@ -1,0 +1,32 @@
+begin;
+create temporary table mx_qa_result(proof jsonb) on commit drop;
+do $$
+declare a uuid:=gen_random_uuid();b uuid:=gen_random_uuid();n integer;did_reject boolean;proof jsonb:='{}';
+begin
+ insert into auth.users(id,email,role,aud,raw_app_meta_data,raw_user_meta_data,created_at,updated_at) values(a,'mirror-qa-'||a::text||'@example.invalid','authenticated','authenticated','{}','{}',now(),now()),(b,'mirror-qa-'||b::text||'@example.invalid','authenticated','authenticated','{}','{}',now(),now());
+ insert into mirror_x.snapshots(id,payload,published) values('QA-PRIVATE-'||a::text,'{"qa":true}',false);
+ perform set_config('request.jwt.claim.sub','',true);
+ execute 'set local role anon';
+ select count(*) into n from public.mx_instruments;if n<>503 then raise exception 'Coverage mismatch';end if;proof:=proof||'{"anonymous_reference_read":true}';
+ select count(*) into n from public.mx_snapshots where id like 'QA-PRIVATE-%';if n<>0 then raise exception 'Private snapshot leak';end if;proof:=proof||'{"private_snapshot_hidden":true}';
+ did_reject:=false;begin perform 1 from public.mx_research;exception when insufficient_privilege then did_reject:=true;end;if not did_reject then raise exception 'Anon research access';end if;proof:=proof||'{"anonymous_private_denied":true}';
+ did_reject:=false;begin perform public.mx_write_research('ADBE','watch');exception when insufficient_privilege then did_reject:=true;end;if not did_reject then raise exception 'Anon RPC write';end if;proof:=proof||'{"anonymous_write_denied":true}';
+ execute 'reset role';
+ perform set_config('request.jwt.claim.sub',a::text,true);perform set_config('request.jwt.claims',jsonb_build_object('sub',a,'role','authenticated')::text,true);execute 'set local role authenticated';
+ perform public.mx_write_research('ADBE','watch');perform public.mx_write_research('ADBE','note','Temporary MIRROR QA');perform public.mx_write_research('ADBE','valuation',null,'{"revenue":23769,"growth":0.07,"margin":0.35,"taxRate":0.2,"daRate":0.02,"capexRate":0.02,"nwcRate":0.03,"wacc":0.1,"terminalGrowth":0.025,"shares":427,"netDebt":-385,"currency":"USD"}');
+ select count(*) into n from public.mx_research where ticker='ADBE' and note='Temporary MIRROR QA' and assumptions->>'currency'='USD';if n<>1 then raise exception 'Owner save/read failed';end if;proof:=proof||'{"owner_watch_note_model_roundtrip":true}';
+ perform public.mx_write_research('ADBE','import','Should not replace','{}');select count(*) into n from public.mx_research where note='Temporary MIRROR QA';if n<>1 then raise exception 'Import overwrote cloud';end if;proof:=proof||'{"atomic_import_preserves_cloud":true}';
+ did_reject:=false;begin update mirror_x.research set user_id=b where user_id=a;exception when insufficient_privilege then did_reject:=true;end;if not did_reject then raise exception 'Owner reassignment permitted';end if;proof:=proof||'{"owner_reassignment_denied":true}';
+ execute 'reset role';perform set_config('request.jwt.claim.sub',b::text,true);perform set_config('request.jwt.claims',jsonb_build_object('sub',b,'role','authenticated','user_metadata',jsonb_build_object('user_id',a))::text,true);execute 'set local role authenticated';
+ select count(*) into n from public.mx_research;if n<>0 then raise exception 'Cross-user read';end if;proof:=proof||'{"cross_user_read_denied":true,"editable_metadata_ignored":true}';
+ update mirror_x.research set note='forged' where user_id=a;get diagnostics n=row_count;if n<>0 then raise exception 'Cross-user update';end if;
+ delete from public.mx_research where user_id=a;get diagnostics n=row_count;if n<>0 then raise exception 'Cross-user delete';end if;proof:=proof||'{"cross_user_write_delete_denied":true}';
+ did_reject:=false;begin insert into mirror_x.research(user_id,ticker,note) values(a,'NKE','forged');exception when insufficient_privilege then did_reject:=true;end;if not did_reject then raise exception 'Spoofed owner insert';end if;proof:=proof||'{"forged_owner_insert_denied":true}';
+ execute 'reset role';perform set_config('request.jwt.claim.sub',a::text,true);perform set_config('request.jwt.claims',jsonb_build_object('sub',a,'role','authenticated')::text,true);execute 'set local role authenticated';
+ update mirror_x.write_buckets set hits=120 where user_id=a;did_reject:=false;begin perform public.mx_write_research('ADBE','watch');exception when raise_exception then if sqlerrm='MX_RATE_LIMIT' then did_reject:=true;else raise;end if;end;if not did_reject then raise exception 'Rate limit not applied';end if;proof:=proof||'{"database_rate_limit":true}';
+ delete from public.mx_research where ticker='ADBE';get diagnostics n=row_count;if n<>1 then raise exception 'Owner delete failed';end if;proof:=proof||'{"owner_delete":true}';
+ execute 'reset role';insert into mx_qa_result values(proof||'{"all_checks_passed":true,"fixture_changes_rolled_back":true}');
+end;
+$$;
+select proof from mx_qa_result;
+rollback;

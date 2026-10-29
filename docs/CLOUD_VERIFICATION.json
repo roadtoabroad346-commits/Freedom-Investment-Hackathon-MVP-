@@ -1,0 +1,52 @@
+{
+  "projectRef": "edpuovkgoisyzpguksdi",
+  "schema": "mirror_x",
+  "authorization": "Explicit user approval for isolated schema in Jetuu; no plan upgrade",
+  "records": 503,
+  "annualFacts": 3,
+  "publishedSnapshot": "MX-3777d2e495a9",
+  "unrelatedObjectsHashBefore": "8072d96d8afc3dde438e5ab7bda99c17",
+  "unrelatedObjectsHashAfter": "8072d96d8afc3dde438e5ab7bda99c17",
+  "localUnitAndPostgresTests": 46,
+  "localBrowserFlows": 8,
+  "remoteSqlRls": {
+    "owner_delete": true,
+    "all_checks_passed": true,
+    "database_rate_limit": true,
+    "anonymous_write_denied": true,
+    "cross_user_read_denied": true,
+    "private_snapshot_hidden": true,
+    "anonymous_private_denied": true,
+    "anonymous_reference_read": true,
+    "editable_metadata_ignored": true,
+    "owner_reassignment_denied": true,
+    "forged_owner_insert_denied": true,
+    "fixture_changes_rolled_back": true,
+    "atomic_import_preserves_cloud": true,
+    "cross_user_write_delete_denied": true,
+    "owner_watch_note_model_roundtrip": true
+  },
+  "remoteAuthAndApi": {
+    "status": 200,
+    "qaSourceCommit": "857e21fe13fc486ced5faabe86d481d5f065c6ee",
+    "coreSourceCommit": "62eae3a",
+    "pass": true,
+    "checks": {
+      "authenticated_two_users": true,
+      "fresh_user_verified": true,
+      "anonymous_api_denied": true,
+      "watch_saved": true,
+      "note_saved": true,
+      "model_saved": true,
+      "owner_reads_persisted": true,
+      "other_user_cannot_read": true,
+      "owner_forgery_rejected": true,
+      "other_user_cannot_delete": true,
+      "import_preserves_existing": true,
+      "owner_delete": true
+    }
+  },
+  "temporaryQaUsersDeleted": true,
+  "qaCredentialsCleared": true,
+  "productionQaRoute": false
+}
