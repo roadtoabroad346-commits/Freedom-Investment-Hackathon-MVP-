@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
-import { getCompany, getModel, annualFacts } from "@/lib/data";
+import { getDataset } from "@/lib/repository";
+export const dynamic = "force-dynamic";
 import { PageHead, Empty, Source } from "@/components/ui";
 import { Valuation } from "@/components/valuation";
 export default async function Value({
@@ -7,6 +8,7 @@ export default async function Value({
 }: {
   params: Promise<{ ticker: string }>;
 }) {
+  const { getCompany, getModel, annualFacts } = await getDataset();
   const { ticker: t } = await params,
     ticker = t.toUpperCase(),
     c = getCompany(ticker);

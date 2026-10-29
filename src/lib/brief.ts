@@ -4,14 +4,24 @@ import { scoreCompany } from "./screening";
 import { dcf } from "./finance";
 import { usd, pct, number } from "./format";
 import { snapshot } from "./snapshot";
-export function researchBrief(ticker: string) {
-  const c = getCompany(ticker);
+export function researchBrief(
+  ticker: string,
+  data = { getCompany, annualFacts, getModel, universe },
+  published = snapshot,
+) {
+  const {
+    getCompany: findCompany,
+    annualFacts: facts,
+    getModel: findModel,
+    universe: records,
+  } = data;
+  const c = findCompany(ticker);
   if (!c) return null;
-  const f = annualFacts[ticker],
+  const f = facts[ticker],
     r = focusResearch.find((r) => r.ticker === ticker),
-    m = getModel(ticker),
-    s = scoreCompany(c, universe);
-  let text = `# MIRROR X — ${ticker} / ${c.name}\n\nСтатус: PRELIMINARY / NOT-RATED\nСрез: ${snapshot.cutoff}; snapshot ${snapshot.id}\n\nОтрасль: ${c.sector}\nКотировка набора: ${usd(c.price)}; дата неизвестна (UNDATED). Не текущая цена.\nПодтверждённая текущая цена: N/A. Upside: N/A.\nРейтинг исследования: ${s.score ?? "N/A"}. ${s.reason}\nИсточник общего набора: ${c.sourceUrl}\n`;
+    m = findModel(ticker),
+    s = scoreCompany(c, records);
+  let text = `# MIRROR X — ${ticker} / ${c.name}\n\nСтатус: PRELIMINARY / NOT-RATED\nСрез: ${published.cutoff}; snapshot ${published.id}\n\nОтрасль: ${c.sector}\nКотировка набора: ${usd(c.price)}; дата неизвестна (UNDATED). Не текущая цена.\nПодтверждённая текущая цена: N/A. Upside: N/A.\nРейтинг исследования: ${s.score ?? "N/A"}. ${s.reason}\nИсточник общего набора: ${c.sourceUrl}\n`;
   if (f)
     text += `\n## Факты годового отчёта\n\nПериод: ${f.periodEnd}; документ: ${f.filedAt}. USD millions.\nВыручка: ${f.revenue}; operating income: ${f.operatingIncome}; cash + short-term investments: ${f.cash}; debt: ${f.debt}; diluted shares (millions): ${f.dilutedShares}.\nИсточник: ${f.sourceUrl}\n`;
   if (r)

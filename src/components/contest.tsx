@@ -1,12 +1,16 @@
 import Link from "next/link";
 import { Download, ShieldAlert, ArrowUpRight } from "lucide-react";
-import { snapshot } from "@/lib/snapshot";
-import { universe } from "@/lib/data";
+import { getDataset, getPublishedSnapshot } from "@/lib/repository";
+
 import { allocate } from "@/lib/finance";
 import { focusResearch } from "@/lib/research";
 import { usd, pct } from "@/lib/format";
 import { Badge, PageHead, Notice, Source, SectionTitle } from "./ui";
-export function Contest({ jury = false }: { jury?: boolean }) {
+export async function Contest({ jury = false }: { jury?: boolean }) {
+  const [{ universe }, snapshot] = await Promise.all([
+    getDataset(),
+    getPublishedSnapshot(),
+  ]);
   const allocation = allocate(snapshot.companies.map((c) => c.allocationBps));
   return (
     <>

@@ -7,7 +7,8 @@ import {
   SlidersHorizontal,
 } from "lucide-react";
 import { screen } from "@/lib/screening";
-import { universe, coverage } from "@/lib/data";
+import { getDataset, screenRepository } from "@/lib/repository";
+export const dynamic = "force-dynamic";
 import { compact, number } from "@/lib/format";
 import { Badge, PageHead, Notice, Source, Empty } from "@/components/ui";
 export default async function Explore({
@@ -16,6 +17,7 @@ export default async function Explore({
   searchParams: Promise<Record<string, string | undefined>>;
 }) {
   const p = await searchParams;
+  const { universe, coverage } = await getDataset();
   const safe = (v: string | undefined) =>
     v !== undefined && v.trim() !== "" && Number.isFinite(Number(v))
       ? Number(v)
@@ -30,7 +32,7 @@ export default async function Explore({
     sort: p.sort,
     page: safe(p.page),
   };
-  const result = screen(universe, f);
+  const result = await screenRepository(f);
   const sectors = [...new Set(universe.map((c) => c.sector))].sort();
   const pageUrl = (page: number) => {
     const s = new URLSearchParams(

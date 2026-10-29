@@ -2243,3 +2243,57 @@ tr:hover td {
 .valuation-layout {
   min-width: 0;
 }
+.account-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  font-size: 11px;
+  color: var(--navy);
+  background: white;
+  white-space: nowrap;
+}
+.account-link:hover {
+  background: var(--paper);
+}
+.account-panel {
+  max-width: 570px;
+}
+.account-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 23px 0;
+}
+.account-panel input {
+  font-size: 15px;
+}
+.account-tabs {
+  display: flex;
+  gap: 12px;
+}
+.account-panel > .button {
+  margin: 8px 8px 0 0;
+}
+.watch-grid .panel > .button {
+  margin-right: 14px;
+  margin-bottom: 12px;
+}
+@media (max-width: 760px) {
+  .topbar-right .account-link {
+    font-size: 9px;
+    padding: 5px 9px;
+    min-height: 32px;
+  }
+  .topbar-right {
+    gap: 6px;
+  }
+  .account-panel {
+    max-width: 100%;
+  }
+  .account-tabs {
+    flex-wrap: wrap;
+  }
+}

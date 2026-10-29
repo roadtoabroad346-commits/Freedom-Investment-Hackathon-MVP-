@@ -1,6 +1,8 @@
 import { PageHead, Notice } from "@/components/ui";
-import { coverage } from "@/lib/data";
-export default function Limitations() {
+import { getDataset } from "@/lib/repository";
+export const dynamic = "force-dynamic";
+export default async function Limitations() {
+  const { coverage } = await getDataset();
   const c = coverage();
   return (
     <>
@@ -48,10 +50,11 @@ export default function Limitations() {
         </p>
         <h2>Сохранение и команда</h2>
         <p>
-          Watchlist, заметки и сценарии сохраняются локально в браузере.
-          Supabase не подключён: доступные базы принадлежат другим приложениям.
-          Командная синхронизация, удалённые записи и аутентификация не заявлены
-          как готовые.
+          Без входа записи локальные. После входа доступны личные облачные
+          заметки и модели в Supabase. Бесплатная конфигурация использует
+          отдельную схему mirror_x в проекте Jetuu с общей Auth. Полноценные
+          командные пространства и роли совместного редактирования не входят в
+          этот MVP.
         </p>
         <h2>Финансовые границы</h2>
         <p>

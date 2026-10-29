@@ -8,10 +8,12 @@ import {
   Check,
   ArrowUpRight,
 } from "lucide-react";
-import { coverage } from "@/lib/data";
+import { getDataset } from "@/lib/repository";
+export const dynamic = "force-dynamic";
 import { focusResearch } from "@/lib/research";
 import { Badge, ButtonLink, SectionTitle, Stat } from "@/components/ui";
-export default function Home() {
+export default async function Home() {
+  const { coverage } = await getDataset();
   const c = coverage();
   return (
     <>

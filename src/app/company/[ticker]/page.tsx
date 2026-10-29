@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRight, Download, ShieldAlert, ArrowLeft } from "lucide-react";
-import { getCompany, annualFacts, universe, getModel } from "@/lib/data";
+import { getDataset } from "@/lib/repository";
+export const dynamic = "force-dynamic";
 import { focusResearch } from "@/lib/research";
 import { scoreCompany } from "@/lib/screening";
 import { number, pct, compact, usd } from "@/lib/format";
@@ -21,6 +22,7 @@ export default async function Company({
 }: {
   params: Promise<{ ticker: string }>;
 }) {
+  const { getCompany, annualFacts, universe, getModel } = await getDataset();
   const { ticker: raw } = await params;
   const ticker = raw.toUpperCase(),
     c = getCompany(ticker);

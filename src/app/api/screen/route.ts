@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { screen } from "@/lib/screening";
-import { universe, coverage } from "@/lib/data";
+import { getDataset, screenRepository } from "@/lib/repository";
 const query = z.object({
   q: z.string().max(80).optional(),
   sector: z.string().max(100).optional(),
@@ -12,7 +12,8 @@ const query = z.object({
   ebitda: z.enum(["0", "1"]).optional(),
   dated: z.enum(["0", "1"]).optional(),
 });
-export function GET(req: Request) {
+export async function GET(req: Request) {
+  const { coverage } = await getDataset();
   const result = query.safeParse(
     Object.fromEntries(new URL(req.url).searchParams),
   );
@@ -27,7 +28,7 @@ export function GET(req: Request) {
   const p = result.data;
   return Response.json(
     {
-      ...screen(universe, {
+      ...(await screenRepository({
         query: p.q,
         sector: p.sector,
         maxPe: p.pe,
@@ -37,7 +38,7 @@ export function GET(req: Request) {
         sort: p.sort,
         page: p.page,
         pageSize: p.pageSize,
-      }),
+      })),
       coverage: coverage(),
     },
     { headers: { "Cache-Control": "public, max-age=300" } },

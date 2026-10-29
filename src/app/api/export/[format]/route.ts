@@ -1,12 +1,13 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { snapshot } from "@/lib/snapshot";
+import { getPublishedSnapshot } from "@/lib/repository";
 import { finalGate } from "@/lib/build-snapshot";
 export const runtime = "nodejs";
 export async function GET(
   req: Request,
   { params }: { params: Promise<{ format: string }> },
 ) {
+  const snapshot = await getPublishedSnapshot();
   const { format } = await params;
   if (!["xlsx", "pptx"].includes(format))
     return Response.json(

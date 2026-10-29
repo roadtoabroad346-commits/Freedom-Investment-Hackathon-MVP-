@@ -9,10 +9,14 @@ export { provenance };
 export function getCompany(ticker: string) {
   return universe.find((c) => c.ticker === ticker.toUpperCase());
 }
-export function getModel(ticker: string): Assumptions | null {
-  const fact = annualFacts[ticker],
+export function getModel(
+  ticker: string,
+  instruments: Instrument[] = universe,
+  facts: Record<string, AnnualFact> = annualFacts,
+): Assumptions | null {
+  const fact = facts[ticker],
     research = focusResearch.find((r) => r.ticker === ticker),
-    company = getCompany(ticker);
+    company = instruments.find((c) => c.ticker === ticker);
   if (
     !fact ||
     fact.operatingIncome <= 0 ||

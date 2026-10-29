@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import { useAuth } from "./auth/provider";
+import { cloudSave, cloudResearch } from "@/lib/cloud-client";
 import {
   RotateCcw,
   Bookmark,
@@ -17,6 +19,8 @@ export function Valuation({
   initial: Assumptions;
   ticker: string;
 }) {
+  const { user, configured } = useAuth();
+  const [busy, setBusy] = useState(false);
   const [a, setA] = useState(initial),
     [price, setPrice] = useState(""),
     [message, setMessage] = useState("");
@@ -28,8 +32,14 @@ export function Valuation({
     error = e instanceof Error ? e.message : "Некорректные параметры";
   }
   const implied = result && price ? reverseDcf(a, Number(price)) : null;
-  function save() {
+  async function save() {
+    setBusy(true);
     try {
+      if (user && configured) {
+        await cloudSave({ operation: "valuation", ticker, assumptions: a });
+        setMessage("Сценарий сохранён в облаке");
+        return;
+      }
       localStorage.setItem(
         `mirror-x-model-${ticker}`,
         JSON.stringify({
@@ -41,11 +51,25 @@ export function Valuation({
       );
       setMessage("Сценарий сохранён в этом браузере");
     } catch {
-      setMessage("Браузер запретил сохранение");
+      setMessage("Не удалось сохранить сценарий");
+    } finally {
+      setBusy(false);
     }
   }
-  function restore() {
+  async function restore() {
+    setBusy(true);
     try {
+      if (user && configured) {
+        const rows = await cloudResearch(ticker);
+        if (!rows[0]?.assumptions) {
+          setMessage("В облаке пока нет сохранённого сценария");
+          return;
+        }
+        dcf(rows[0].assumptions);
+        setA(rows[0].assumptions);
+        setMessage("Облачный сценарий восстановлен");
+        return;
+      }
       const raw = localStorage.getItem(`mirror-x-model-${ticker}`);
       if (!raw) {
         setMessage("Сохранённого сценария пока нет");
@@ -57,6 +81,8 @@ export function Valuation({
       setMessage("Сохранённый сценарий восстановлен");
     } catch {
       setMessage("Сохранённый сценарий повреждён или недоступен");
+    } finally {
+      setBusy(false);
     }
   }
   const fields: {
@@ -178,11 +204,15 @@ export function Valuation({
               <small>{f.hint}</small>
             </label>
           ))}
-          <button className="button" onClick={save} disabled={!result}>
+          <button className="button" onClick={save} disabled={!result || busy}>
             <Bookmark size={16} aria-hidden="true" />
             Сохранить сценарий
           </button>
-          <button className="button secondary" onClick={restore}>
+          <button
+            className="button secondary"
+            disabled={busy}
+            onClick={restore}
+          >
             Восстановить сохранённый
           </button>
           <p role="status" className="footnote">

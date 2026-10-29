@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { getCompany, annualFacts } from "@/lib/data";
+import { getDataset } from "@/lib/repository";
+export const dynamic = "force-dynamic";
 import { PageHead, Notice, Source } from "@/components/ui";
 import { number, pct, compact } from "@/lib/format";
 export default async function Compare({
@@ -7,6 +8,7 @@ export default async function Compare({
 }: {
   searchParams: Promise<Record<string, string | undefined>>;
 }) {
+  const { getCompany, annualFacts } = await getDataset();
   const p = await searchParams;
   const tickers = [
     ...new Set(
