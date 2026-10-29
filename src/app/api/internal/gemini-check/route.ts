@@ -1,8 +1,5 @@
-import {generateText} from 'ai';import {createGoogle} from '@ai-sdk/google';
 export const maxDuration=60;
-export async function GET(){if(process.env.VERCEL_ENV!=="preview")return new Response(null,{status:404});try{
- const result=await generateText({model:createGoogle({apiKey:process.env.GEMINI_API_KEY})(process.env.GEMINI_MODEL!),prompt:"Reply with exactly: GEMINI_OK",maxOutputTokens:128,maxRetries:0,abortSignal:AbortSignal.timeout(45000)});
- const url=process.env.NEXT_PUBLIC_SUPABASE_URL!,key=process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!;
- const response=await fetch(url+"/auth/v1/settings",{headers:{apikey:key}});const settings=await response.json();
- return Response.json({generated:result.text.includes("GEMINI_OK"),model:process.env.GEMINI_MODEL,auth:{emailEnabled:settings.external?.email,signupDisabled:settings.disable_signup,emailAutoconfirm:settings.mailer_autoconfirm}},{headers:{"Cache-Control":"private, no-store"}});
- }catch{return Response.json({generated:false})}}
+export async function GET(){if(process.env.VERCEL_ENV!=="preview")return new Response(null,{status:404});const result:Record<string,unknown>={};try{
+ const auth=await fetch(process.env.NEXT_PUBLIC_SUPABASE_URL+"/auth/v1/settings",{headers:{apikey:process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!},signal:AbortSignal.timeout(8000)});const a=await auth.json();result.auth={emailEnabled:a.external?.email,signupDisabled:a.disable_signup,emailAutoconfirm:a.mailer_autoconfirm};
+ const model="gemini-2.5-flash-lite";const r=await fetch("https://generativelanguage.googleapis.com/v1beta/models/"+model+":generateContent",{method:"POST",headers:{"x-goog-api-key":process.env.GEMINI_API_KEY!,"Content-Type":"application/json"},body:JSON.stringify({contents:[{parts:[{text:"Reply exactly GEMINI_OK"}]}],generationConfig:{maxOutputTokens:128}}),signal:AbortSignal.timeout(25000)});const j=await r.json();result.providerStatus=r.status;result.model=model;result.generated=j.candidates?.some((c:{content?:{parts?:{text?:string}[]}})=>c.content?.parts?.some(p=>p.text?.includes("GEMINI_OK")))??false;result.providerCode=j.error?.status??null;
+ }catch(e){result.errorName=e instanceof Error?e.name:"unknown"}return Response.json(result,{headers:{"Cache-Control":"private, no-store"}})}
