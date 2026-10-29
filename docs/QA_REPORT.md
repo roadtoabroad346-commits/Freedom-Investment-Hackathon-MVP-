@@ -1,3 +1,11 @@
+# Визуальный релиз: актуальная проверка
+
+69 unit/PostgreSQL tests и 12 Chromium-сценариев пройдены; проверены 390/1366 px, настоящий импорт → preview → применение → графики/портфель/бизнес → выгрузка → reload. Независимый парсер подтвердил 3 native Excel charts; 230 конкурсных формул пересчитаны без ошибок. Production dependency audit:0. Проверка ролей реальной Supabase: PASS с rollback fixture; новых security advisor findings:0. Actual Gemini generation не проверена: ключ/модель ещё не предоставлены.
+
+Подробности и пределы доказательств: VISUAL_WORKSPACE.md, VISUAL_VERIFICATION.json, VISUAL_PRODUCTION_SMOKE.json. Ниже сохранены предыдущие этапы QA.
+
+---
+
 # Последнее обновление: Supabase подключён
 
 46 локальных тестов,8 браузерных сценариев и12 реальных удалённых Auth/API проверок прошли. RLS проверен и локально, и в согласованной базе. Подробности: CLOUD_INTEGRATION.md / CLOUD_VERIFICATION.json. Нижеследующий отчёт относится к первому автономному срезу и сохранён как история.

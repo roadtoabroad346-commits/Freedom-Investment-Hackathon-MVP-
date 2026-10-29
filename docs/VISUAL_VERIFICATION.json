@@ -47,5 +47,11 @@
   },
   "liveMarketFeedConnected": false,
   "paidPlanUpgrade": false,
-  "deployment": "Pending deployment of this source commit"
+  "deployment": {
+    "id": "dpl_5w9q182QcAg2T1Le82V2VjLpwfyQ",
+    "sourceCommit": "67cc68d38602b75efd47b946ec26832a450b0d38",
+    "url": "https://mirror-x-three.vercel.app",
+    "state": "READY",
+    "smoke": "docs/VISUAL_PRODUCTION_SMOKE.json"
+  }
 }

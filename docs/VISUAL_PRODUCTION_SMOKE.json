@@ -1,0 +1,90 @@
+{
+  "deploymentId": "dpl_5w9q182QcAg2T1Le82V2VjLpwfyQ",
+  "sourceCommit": "67cc68d38602b75efd47b946ec26832a450b0d38",
+  "url": "https://mirror-x-three.vercel.app",
+  "environment": "production",
+  "ready": true,
+  "checks": [
+    {
+      "path": "/api/health",
+      "status": 200,
+      "contentType": "application/json",
+      "cache": "no-store",
+      "body": {
+        "status": "ok",
+        "mode": "supabase",
+        "database": "CONNECTED",
+        "coverage": {
+          "instruments": 503,
+          "financialMetrics": 486,
+          "annualStatements": 3,
+          "datedPrices": 0,
+          "undatedQuotes": 486,
+          "asOf": null,
+          "importedAt": "2026-10-29"
+        },
+        "snapshotId": "MX-3777d2e495a9"
+      }
+    },
+    {
+      "path": "/market",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "cache": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "expectedContent": true
+    },
+    {
+      "path": "/workspace",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "expectedContent": true
+    },
+    {
+      "path": "/api/assistant",
+      "status": 200,
+      "contentType": "application/json",
+      "cache": "private, no-store",
+      "body": {
+        "configured": false,
+        "dailyLimit": 10
+      }
+    },
+    {
+      "path": "/api/workspace",
+      "status": 401,
+      "connectorCode": "deployment_authentication_required",
+      "appResponseVerified": false
+    },
+    {
+      "path": "/api/spreadsheets/template",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "cache": "public, max-age=3600",
+      "filename": "attachment; filename=\"MIRROR_X_template.xlsx\"",
+      "zipSignature": true
+    },
+    {
+      "path": "/api/spreadsheets/export",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "cache": "public, max-age=120",
+      "filename": "attachment; filename=\"MIRROR_X_market_UNDATED.xlsx\"",
+      "zipSignature": true
+    },
+    {
+      "path": "/api/export/xlsx?final=1",
+      "status": 409,
+      "contentType": "application/json",
+      "cache": "public, max-age=0, must-revalidate"
+    }
+  ],
+  "limits": {
+    "remoteBrowserInteractionVerified": false,
+    "authenticatedWorkspaceHttpCrudVerified": false,
+    "localBrowserFlowVerified": true,
+    "remoteDatabaseRoleCrudVerified": true,
+    "geminiProviderCallVerified": false,
+    "liveFeedConnected": false
+  }
+}

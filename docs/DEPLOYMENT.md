@@ -1,3 +1,19 @@
+# Текущий визуальный релиз
+
+- Production: https://mirror-x-three.vercel.app, **READY**.
+- Рынок: https://mirror-x-three.vercel.app/market; личные графики, портфель, бизнес и Excel: https://mirror-x-three.vercel.app/workspace.
+- Deployment: `dpl_5w9q182QcAg2T1Le82V2VjLpwfyQ`.
+- Исполняемый source SHA: `67cc68d38602b75efd47b946ec26832a450b0d38`.
+- 69 unit/PostgreSQL tests, 12 local Chromium scenarios, remote RLS/concurrency/quota proof; 3 independently parsed native Excel workbooks.
+- Remote production: health/CONNECTED, market/workspace SSR, template and market XLSX:200; FINAL export:409; Gemini status configured=false.
+- Workspace API fetch returned a connector-wrapped401; its actual application body could not be independently inspected with this connector. Do not count this as authenticated production HTTP CRUD verification. Local browser flows and real database-role CRUD are independently verified.
+- Полные договорённости и ограничения: VISUAL_WORKSPACE.md; доказательства: VISUAL_VERIFICATION.json, VISUAL_EXCEL_VERIFICATION.json, VISUAL_PRODUCTION_SMOKE.json.
+- Gemini ожидает серверные GEMINI_API_KEY и GEMINI_MODEL; live feed не подключён. Тарифы не повышались.
+
+Ниже — предыдущие релизы; их deployment IDs и проверки сохранены как история.
+
+---
+
 # Текущая production-версия с Supabase
 
 - URL: https://mirror-x-three.vercel.app
