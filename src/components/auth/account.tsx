@@ -338,6 +338,10 @@ function EmailAccount() {
 export function Account() {
   const { user } = useAuth();
   const [emailMode, setEmailMode] = useState(false);
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has("confirmation") || p.get("recovery") === "1") setEmailMode(true);
+  }, []);
   if (user)
     return (
       <>

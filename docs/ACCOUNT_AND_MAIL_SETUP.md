@@ -1,3 +1,9 @@
+# Update: default signup no longer needs SMTP
+
+The default handle/password/recovery-key flow is implemented and remotely verified. See HANDLE_ACCOUNTS.md and HANDLE_VERIFICATION.json. SMTP is only needed for the optional legacy email signup/recovery path. The historical mail setup notes below do not block handle registration.
+
+---
+
 # Public MIRROR X accounts and email setup
 
 Public entry: https://mirror-x-three.vercel.app. This production alias does not require a Vercel account. Standard Protection continues to protect deployment URLs/previews, including the private provider check. Share the production alias, not a generated deployment URL.

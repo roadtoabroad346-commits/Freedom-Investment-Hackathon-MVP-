@@ -1,3 +1,7 @@
+## Registration without domain or email
+
+Open https://mirror-x-three.vercel.app/account and choose a handle and password. Save the one-time recovery key before entering your workspace. No SMTP, purchased domain or Vercel account is needed. Existing email accounts remain available separately. Details and security model: [docs/HANDLE_ACCOUNTS.md](docs/HANDLE_ACCOUNTS.md).
+
 # MIRROR X 2.1
 
 Универсальный исследовательский терминал: 503 импортированные компании, поиск и фильтры, объяснимый отраслевой рейтинг, company facts, сравнение, DCF / Reverse DCF, сценарии, локальные заметки и индивидуальный research export. Freedom 2026 — отдельное пространство с тремя основными исследованиями Adobe, PayPal и Nike.
